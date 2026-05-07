@@ -1,0 +1,1086 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище SZR_ProductionModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AuditLogs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Action" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="EntityType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EntityId" Type="int" Nullable="false" />
+    <Property Name="OldValue" Type="nvarchar(max)" />
+    <Property Name="NewValue" Type="nvarchar(max)" />
+    <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="IpAddress" Type="nvarchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="BatchMaterials">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchId" Type="int" Nullable="false" />
+    <Property Name="RawMaterialBatchId" Type="int" Nullable="false" />
+    <Property Name="QuantityUsed" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BatchStepExecutions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchId" Type="int" Nullable="false" />
+    <Property Name="StepId" Type="int" Nullable="false" />
+    <Property Name="StepNumber" Type="int" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StartedAt" Type="datetime2" Precision="7" />
+    <Property Name="FinishedAt" Type="datetime2" Precision="7" />
+    <Property Name="StartedBy" Type="int" />
+    <Property Name="FinishedBy" Type="int" />
+    <Property Name="ActualParams" Type="nvarchar(max)" />
+    <Property Name="EquipmentId" Type="int" />
+  </EntityType>
+  <EntityType Name="DeviationEvents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchId" Type="int" Nullable="false" />
+    <Property Name="StepExecutionId" Type="int" />
+    <Property Name="EventType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ParameterName" Type="nvarchar" MaxLength="100" />
+    <Property Name="PlannedValue" Type="nvarchar" MaxLength="50" />
+    <Property Name="ActualValue" Type="nvarchar" MaxLength="50" />
+    <Property Name="Severity" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="ResolvedAt" Type="datetime2" Precision="7" />
+    <Property Name="ResolvedBy" Type="int" />
+    <Property Name="EquipmentId" Type="int" />
+  </EntityType>
+  <EntityType Name="Equipment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Line" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EquipmentLogs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EquipmentId" Type="int" Nullable="false" />
+    <Property Name="BatchId" Type="int" />
+    <Property Name="EventType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EventTime" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="Parameters" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="LabTestParameters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TestId" Type="int" Nullable="false" />
+    <Property Name="ParameterName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="NormMin" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="NormMax" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="ActualValue" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsPassed" Type="bit" />
+  </EntityType>
+  <EntityType Name="LabTests">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TestNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TestType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ObjectType" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ObjectId" Type="int" Nullable="false" />
+    <Property Name="AssignedAt" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="AssignedBy" Type="int" Nullable="false" />
+    <Property Name="ExecutedBy" Type="int" />
+    <Property Name="ExecutedAt" Type="datetime2" Precision="7" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Priority" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="MaintenanceRecords">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EquipmentId" Type="int" Nullable="false" />
+    <Property Name="MaintenanceDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="PerformedBy" Type="int" />
+    <Property Name="NextMaintenanceDate" Type="date" />
+    <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Notifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsRead" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="Metadata" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ProductionBatches">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrderId" Type="int" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="RecipeId" Type="int" Nullable="false" />
+    <Property Name="TechCardId" Type="int" Nullable="false" />
+    <Property Name="Line" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LabStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="StartedAt" Type="datetime2" Precision="7" />
+    <Property Name="FinishedAt" Type="datetime2" Precision="7" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="EquipmentId" Type="int" />
+  </EntityType>
+  <EntityType Name="ProductionOrders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="PlannedQuantity" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="PlannedStartDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ProductType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Form" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RawMaterialBatches">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SupplierBatch" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaterialId" Type="int" Nullable="false" />
+    <Property Name="Supplier" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Quantity" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ArrivalDate" Type="date" Nullable="false" />
+    <Property Name="LabStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DecisionAt" Type="datetime2" Precision="7" />
+    <Property Name="DecisionBy" Type="int" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="RawMaterials">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Category" Type="nvarchar" MaxLength="50" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RecipeComponents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RecipeId" Type="int" Nullable="false" />
+    <Property Name="RawMaterialId" Type="int" Nullable="false" />
+    <Property Name="Percentage" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="ToleranceMin" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="ToleranceMax" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="LoadOrder" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Recipes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ApprovedAt" Type="datetime2" Precision="7" />
+    <Property Name="ApprovedBy" Type="int" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TechCards">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ApprovedAt" Type="datetime2" Precision="7" />
+    <Property Name="ApprovedBy" Type="int" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TechSteps">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TechCardId" Type="int" Nullable="false" />
+    <Property Name="StepNumber" Type="int" Nullable="false" />
+    <Property Name="StepType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Instruction" Type="nvarchar(max)" />
+    <Property Name="IsMandatory" Type="bit" Nullable="false" />
+    <Property Name="PlannedParams" Type="nvarchar(max)" />
+    <Property Name="ToleranceParams" Type="nvarchar(max)" />
+    <Property Name="EquipmentId" Type="int" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="Department" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "SZR_Production.dbo.vw_ActiveBatches" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="vw_ActiveBatches">
+    <Key>
+      <PropertyRef Name="BatchNumber" />
+      <PropertyRef Name="ProductName" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="BatchNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Line" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StartedAt" Type="datetime2" Precision="7" />
+  </EntityType>
+  <Association Name="FK_Audit_UserId">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="AuditLogs" Type="Self.AuditLogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuditLogs">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Batches_CreatedBy">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="ProductionBatches" Type="Self.ProductionBatches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductionBatches">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Batches_OrderId">
+    <End Role="ProductionOrders" Type="Self.ProductionOrders" Multiplicity="0..1" />
+    <End Role="ProductionBatches" Type="Self.ProductionBatches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductionOrders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductionBatches">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Batches_ProductId">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="ProductionBatches" Type="Self.ProductionBatches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductionBatches">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Batches_RecipeId">
+    <End Role="Recipes" Type="Self.Recipes" Multiplicity="1" />
+    <End Role="ProductionBatches" Type="Self.ProductionBatches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recipes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductionBatches">
+        <PropertyRef Name="RecipeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Batches_TechCardId">
+    <End Role="TechCards" Type="Self.TechCards" Multiplicity="1" />
+    <End Role="ProductionBatches" Type="Self.ProductionBatches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TechCards">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductionBatches">
+        <PropertyRef Name="TechCardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BatchMaterials_BatchId">
+    <End Role="ProductionBatches" Type="Self.ProductionBatches" Multiplicity="1" />
+    <End Role="BatchMaterials" Type="Self.BatchMaterials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductionBatches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BatchMaterials">
+        <PropertyRef Name="BatchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BatchMaterials_RMBatchId">
+    <End Role="RawMaterialBatches" Type="Self.RawMaterialBatches" Multiplicity="1" />
+    <End Role="BatchMaterials" Type="Self.BatchMaterials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RawMaterialBatches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BatchMaterials">
+        <PropertyRef Name="RawMaterialBatchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BatchStepExecutions_Equipment">
+    <End Role="Equipment" Type="Self.Equipment" Multiplicity="0..1" />
+    <End Role="BatchStepExecutions" Type="Self.BatchStepExecutions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BatchStepExecutions">
+        <PropertyRef Name="EquipmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dev_BatchId">
+    <End Role="ProductionBatches" Type="Self.ProductionBatches" Multiplicity="1" />
+    <End Role="DeviationEvents" Type="Self.DeviationEvents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductionBatches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DeviationEvents">
+        <PropertyRef Name="BatchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dev_CreatedBy">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="DeviationEvents" Type="Self.DeviationEvents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DeviationEvents">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dev_ResolvedBy">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="DeviationEvents" Type="Self.DeviationEvents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DeviationEvents">
+        <PropertyRef Name="ResolvedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dev_StepExecId">
+    <End Role="BatchStepExecutions" Type="Self.BatchStepExecutions" Multiplicity="0..1" />
+    <End Role="DeviationEvents" Type="Self.DeviationEvents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BatchStepExecutions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DeviationEvents">
+        <PropertyRef Name="StepExecutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DeviationEvents_Equipment">
+    <End Role="Equipment" Type="Self.Equipment" Multiplicity="0..1" />
+    <End Role="DeviationEvents" Type="Self.DeviationEvents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DeviationEvents">
+        <PropertyRef Name="EquipmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EquipmentLogs_Equipment">
+    <End Role="Equipment" Type="Self.Equipment" Multiplicity="1" />
+    <End Role="EquipmentLogs" Type="Self.EquipmentLogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EquipmentLogs">
+        <PropertyRef Name="EquipmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EquipmentLogs_ProductionBatches">
+    <End Role="ProductionBatches" Type="Self.ProductionBatches" Multiplicity="0..1" />
+    <End Role="EquipmentLogs" Type="Self.EquipmentLogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductionBatches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EquipmentLogs">
+        <PropertyRef Name="BatchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LabParams_TestId">
+    <End Role="LabTests" Type="Self.LabTests" Multiplicity="1" />
+    <End Role="LabTestParameters" Type="Self.LabTestParameters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LabTests">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LabTestParameters">
+        <PropertyRef Name="TestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LabTests_AssignedBy">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="LabTests" Type="Self.LabTests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LabTests">
+        <PropertyRef Name="AssignedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LabTests_ExecutedBy">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="LabTests" Type="Self.LabTests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LabTests">
+        <PropertyRef Name="ExecutedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaintenanceRecords_Equipment">
+    <End Role="Equipment" Type="Self.Equipment" Multiplicity="1" />
+    <End Role="MaintenanceRecords" Type="Self.MaintenanceRecords" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MaintenanceRecords">
+        <PropertyRef Name="EquipmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaintenanceRecords_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="MaintenanceRecords" Type="Self.MaintenanceRecords" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MaintenanceRecords">
+        <PropertyRef Name="PerformedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notif_UserId">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Notifications" Type="Self.Notifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Notifications">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_CreatedBy">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="ProductionOrders" Type="Self.ProductionOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductionOrders">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_ProductId">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="ProductionOrders" Type="Self.ProductionOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductionOrders">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductionBatches_Equipment">
+    <End Role="Equipment" Type="Self.Equipment" Multiplicity="0..1" />
+    <End Role="ProductionBatches" Type="Self.ProductionBatches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductionBatches">
+        <PropertyRef Name="EquipmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_CreatedBy">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecipeComponents_RawMaterialId">
+    <End Role="RawMaterials" Type="Self.RawMaterials" Multiplicity="1" />
+    <End Role="RecipeComponents" Type="Self.RecipeComponents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RawMaterials">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RecipeComponents">
+        <PropertyRef Name="RawMaterialId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecipeComponents_RecipeId">
+    <End Role="Recipes" Type="Self.Recipes" Multiplicity="1" />
+    <End Role="RecipeComponents" Type="Self.RecipeComponents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recipes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RecipeComponents">
+        <PropertyRef Name="RecipeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recipes_ApprovedBy">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Recipes" Type="Self.Recipes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Recipes">
+        <PropertyRef Name="ApprovedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recipes_CreatedBy">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Recipes" Type="Self.Recipes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Recipes">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recipes_ProductId">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Recipes" Type="Self.Recipes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Recipes">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RMBatches_DecisionBy">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="RawMaterialBatches" Type="Self.RawMaterialBatches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RawMaterialBatches">
+        <PropertyRef Name="DecisionBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RMBatches_MaterialId">
+    <End Role="RawMaterials" Type="Self.RawMaterials" Multiplicity="1" />
+    <End Role="RawMaterialBatches" Type="Self.RawMaterialBatches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RawMaterials">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RawMaterialBatches">
+        <PropertyRef Name="MaterialId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StepExec_BatchId">
+    <End Role="ProductionBatches" Type="Self.ProductionBatches" Multiplicity="1" />
+    <End Role="BatchStepExecutions" Type="Self.BatchStepExecutions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductionBatches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BatchStepExecutions">
+        <PropertyRef Name="BatchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StepExec_FinishedBy">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="BatchStepExecutions" Type="Self.BatchStepExecutions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BatchStepExecutions">
+        <PropertyRef Name="FinishedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StepExec_StartedBy">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="BatchStepExecutions" Type="Self.BatchStepExecutions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BatchStepExecutions">
+        <PropertyRef Name="StartedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StepExec_StepId">
+    <End Role="TechSteps" Type="Self.TechSteps" Multiplicity="1" />
+    <End Role="BatchStepExecutions" Type="Self.BatchStepExecutions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TechSteps">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BatchStepExecutions">
+        <PropertyRef Name="StepId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TechCards_ApprovedBy">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="TechCards" Type="Self.TechCards" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TechCards">
+        <PropertyRef Name="ApprovedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TechCards_CreatedBy">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="TechCards" Type="Self.TechCards" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TechCards">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TechCards_ProductId">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="TechCards" Type="Self.TechCards" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TechCards">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TechSteps_Equipment">
+    <End Role="Equipment" Type="Self.Equipment" Multiplicity="0..1" />
+    <End Role="TechSteps" Type="Self.TechSteps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TechSteps">
+        <PropertyRef Name="EquipmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TechSteps_TechCardId">
+    <End Role="TechCards" Type="Self.TechCards" Multiplicity="1" />
+    <End Role="TechSteps" Type="Self.TechSteps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TechCards">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TechSteps">
+        <PropertyRef Name="TechCardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_RoleId">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="fn_SafeSearch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
+    <Parameter Name="SearchText" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_CreateProductionBatch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProductCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Line" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedByLogin" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_RegisterDeviation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BatchNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="StepNumber" Type="int" Mode="In" />
+    <Parameter Name="ParameterName" Type="nvarchar" Mode="In" />
+    <Parameter Name="PlannedValue" Type="nvarchar" Mode="In" />
+    <Parameter Name="ActualValue" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Severity" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserLogin" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_StartBatchStep" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BatchNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="StepNumber" Type="int" Mode="In" />
+    <Parameter Name="UserLogin" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="Хранилище SZR_ProductionModelContainer">
+    <EntitySet Name="AuditLogs" EntityType="Self.AuditLogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BatchMaterials" EntityType="Self.BatchMaterials" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BatchStepExecutions" EntityType="Self.BatchStepExecutions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DeviationEvents" EntityType="Self.DeviationEvents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Equipment" EntityType="Self.Equipment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EquipmentLogs" EntityType="Self.EquipmentLogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LabTestParameters" EntityType="Self.LabTestParameters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LabTests" EntityType="Self.LabTests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MaintenanceRecords" EntityType="Self.MaintenanceRecords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Notifications" EntityType="Self.Notifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductionBatches" EntityType="Self.ProductionBatches" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductionOrders" EntityType="Self.ProductionOrders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RawMaterialBatches" EntityType="Self.RawMaterialBatches" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RawMaterials" EntityType="Self.RawMaterials" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RecipeComponents" EntityType="Self.RecipeComponents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recipes" EntityType="Self.Recipes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TechCards" EntityType="Self.TechCards" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TechSteps" EntityType="Self.TechSteps" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vw_ActiveBatches" EntityType="Self.vw_ActiveBatches" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_ActiveBatches].[BatchNumber] AS [BatchNumber], 
+    [vw_ActiveBatches].[ProductName] AS [ProductName], 
+    [vw_ActiveBatches].[Line] AS [Line], 
+    [vw_ActiveBatches].[Status] AS [Status], 
+    [vw_ActiveBatches].[StartedAt] AS [StartedAt]
+    FROM [dbo].[vw_ActiveBatches] AS [vw_ActiveBatches]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Audit_UserId" Association="Self.FK_Audit_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="AuditLogs" EntitySet="AuditLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Batches_CreatedBy" Association="Self.FK_Batches_CreatedBy">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ProductionBatches" EntitySet="ProductionBatches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Batches_OrderId" Association="Self.FK_Batches_OrderId">
+      <End Role="ProductionOrders" EntitySet="ProductionOrders" />
+      <End Role="ProductionBatches" EntitySet="ProductionBatches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Batches_ProductId" Association="Self.FK_Batches_ProductId">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ProductionBatches" EntitySet="ProductionBatches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Batches_RecipeId" Association="Self.FK_Batches_RecipeId">
+      <End Role="Recipes" EntitySet="Recipes" />
+      <End Role="ProductionBatches" EntitySet="ProductionBatches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Batches_TechCardId" Association="Self.FK_Batches_TechCardId">
+      <End Role="TechCards" EntitySet="TechCards" />
+      <End Role="ProductionBatches" EntitySet="ProductionBatches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BatchMaterials_BatchId" Association="Self.FK_BatchMaterials_BatchId">
+      <End Role="ProductionBatches" EntitySet="ProductionBatches" />
+      <End Role="BatchMaterials" EntitySet="BatchMaterials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BatchMaterials_RMBatchId" Association="Self.FK_BatchMaterials_RMBatchId">
+      <End Role="RawMaterialBatches" EntitySet="RawMaterialBatches" />
+      <End Role="BatchMaterials" EntitySet="BatchMaterials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BatchStepExecutions_Equipment" Association="Self.FK_BatchStepExecutions_Equipment">
+      <End Role="Equipment" EntitySet="Equipment" />
+      <End Role="BatchStepExecutions" EntitySet="BatchStepExecutions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dev_BatchId" Association="Self.FK_Dev_BatchId">
+      <End Role="ProductionBatches" EntitySet="ProductionBatches" />
+      <End Role="DeviationEvents" EntitySet="DeviationEvents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dev_CreatedBy" Association="Self.FK_Dev_CreatedBy">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="DeviationEvents" EntitySet="DeviationEvents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dev_ResolvedBy" Association="Self.FK_Dev_ResolvedBy">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="DeviationEvents" EntitySet="DeviationEvents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dev_StepExecId" Association="Self.FK_Dev_StepExecId">
+      <End Role="BatchStepExecutions" EntitySet="BatchStepExecutions" />
+      <End Role="DeviationEvents" EntitySet="DeviationEvents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DeviationEvents_Equipment" Association="Self.FK_DeviationEvents_Equipment">
+      <End Role="Equipment" EntitySet="Equipment" />
+      <End Role="DeviationEvents" EntitySet="DeviationEvents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EquipmentLogs_Equipment" Association="Self.FK_EquipmentLogs_Equipment">
+      <End Role="Equipment" EntitySet="Equipment" />
+      <End Role="EquipmentLogs" EntitySet="EquipmentLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EquipmentLogs_ProductionBatches" Association="Self.FK_EquipmentLogs_ProductionBatches">
+      <End Role="ProductionBatches" EntitySet="ProductionBatches" />
+      <End Role="EquipmentLogs" EntitySet="EquipmentLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LabParams_TestId" Association="Self.FK_LabParams_TestId">
+      <End Role="LabTests" EntitySet="LabTests" />
+      <End Role="LabTestParameters" EntitySet="LabTestParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LabTests_AssignedBy" Association="Self.FK_LabTests_AssignedBy">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="LabTests" EntitySet="LabTests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LabTests_ExecutedBy" Association="Self.FK_LabTests_ExecutedBy">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="LabTests" EntitySet="LabTests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaintenanceRecords_Equipment" Association="Self.FK_MaintenanceRecords_Equipment">
+      <End Role="Equipment" EntitySet="Equipment" />
+      <End Role="MaintenanceRecords" EntitySet="MaintenanceRecords" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaintenanceRecords_Users" Association="Self.FK_MaintenanceRecords_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="MaintenanceRecords" EntitySet="MaintenanceRecords" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notif_UserId" Association="Self.FK_Notif_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Notifications" EntitySet="Notifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_CreatedBy" Association="Self.FK_Orders_CreatedBy">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ProductionOrders" EntitySet="ProductionOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_ProductId" Association="Self.FK_Orders_ProductId">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ProductionOrders" EntitySet="ProductionOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductionBatches_Equipment" Association="Self.FK_ProductionBatches_Equipment">
+      <End Role="Equipment" EntitySet="Equipment" />
+      <End Role="ProductionBatches" EntitySet="ProductionBatches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_CreatedBy" Association="Self.FK_Products_CreatedBy">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecipeComponents_RawMaterialId" Association="Self.FK_RecipeComponents_RawMaterialId">
+      <End Role="RawMaterials" EntitySet="RawMaterials" />
+      <End Role="RecipeComponents" EntitySet="RecipeComponents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecipeComponents_RecipeId" Association="Self.FK_RecipeComponents_RecipeId">
+      <End Role="Recipes" EntitySet="Recipes" />
+      <End Role="RecipeComponents" EntitySet="RecipeComponents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recipes_ApprovedBy" Association="Self.FK_Recipes_ApprovedBy">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Recipes" EntitySet="Recipes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recipes_CreatedBy" Association="Self.FK_Recipes_CreatedBy">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Recipes" EntitySet="Recipes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recipes_ProductId" Association="Self.FK_Recipes_ProductId">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Recipes" EntitySet="Recipes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RMBatches_DecisionBy" Association="Self.FK_RMBatches_DecisionBy">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="RawMaterialBatches" EntitySet="RawMaterialBatches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RMBatches_MaterialId" Association="Self.FK_RMBatches_MaterialId">
+      <End Role="RawMaterials" EntitySet="RawMaterials" />
+      <End Role="RawMaterialBatches" EntitySet="RawMaterialBatches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StepExec_BatchId" Association="Self.FK_StepExec_BatchId">
+      <End Role="ProductionBatches" EntitySet="ProductionBatches" />
+      <End Role="BatchStepExecutions" EntitySet="BatchStepExecutions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StepExec_FinishedBy" Association="Self.FK_StepExec_FinishedBy">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="BatchStepExecutions" EntitySet="BatchStepExecutions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StepExec_StartedBy" Association="Self.FK_StepExec_StartedBy">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="BatchStepExecutions" EntitySet="BatchStepExecutions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StepExec_StepId" Association="Self.FK_StepExec_StepId">
+      <End Role="TechSteps" EntitySet="TechSteps" />
+      <End Role="BatchStepExecutions" EntitySet="BatchStepExecutions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TechCards_ApprovedBy" Association="Self.FK_TechCards_ApprovedBy">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="TechCards" EntitySet="TechCards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TechCards_CreatedBy" Association="Self.FK_TechCards_CreatedBy">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="TechCards" EntitySet="TechCards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TechCards_ProductId" Association="Self.FK_TechCards_ProductId">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="TechCards" EntitySet="TechCards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TechSteps_Equipment" Association="Self.FK_TechSteps_Equipment">
+      <End Role="Equipment" EntitySet="Equipment" />
+      <End Role="TechSteps" EntitySet="TechSteps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TechSteps_TechCardId" Association="Self.FK_TechSteps_TechCardId">
+      <End Role="TechCards" EntitySet="TechCards" />
+      <End Role="TechSteps" EntitySet="TechSteps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_RoleId" Association="Self.FK_Users_RoleId">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
