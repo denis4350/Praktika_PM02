@@ -1,0 +1,447 @@
+﻿<UserControl x:Class="SZR_TechnologistApp.Views.ExtruderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converters="clr-namespace:SZR_TechnologistApp.Converters"
+             mc:Ignorable="d"
+             d:DesignHeight="760"
+             d:DesignWidth="1120"
+             Background="#EEF2F7">
+
+    <UserControl.Resources>
+        <converters:StatusToVisibilityConverter x:Key="StatusToVisibilityConverter"/>
+
+        <SolidColorBrush x:Key="PrimaryBrush" Color="#2563EB"/>
+        <SolidColorBrush x:Key="PrimaryDarkBrush" Color="#1D4ED8"/>
+        <SolidColorBrush x:Key="SuccessBrush" Color="#16A34A"/>
+        <SolidColorBrush x:Key="SuccessDarkBrush" Color="#15803D"/>
+        <SolidColorBrush x:Key="MutedTextBrush" Color="#64748B"/>
+        <SolidColorBrush x:Key="CardBorderBrush" Color="#DDE3EC"/>
+        <SolidColorBrush x:Key="DangerBrush" Color="#DC2626"/>
+
+        <Style x:Key="CardBorder" TargetType="Border">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="CornerRadius" Value="16"/>
+            <Setter Property="Padding" Value="16"/>
+            <Setter Property="BorderBrush" Value="{StaticResource CardBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#9AA8BA"
+                                      BlurRadius="14"
+                                      ShadowDepth="2"
+                                      Opacity="0.14"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="PrimaryButton" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="MinWidth" Value="112"/>
+            <Setter Property="Padding" Value="12,7"/>
+            <Setter Property="Margin" Value="6,0,0,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="10"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource PrimaryDarkBrush}"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#CBD5E1"/>
+                    <Setter Property="Foreground" Value="#64748B"/>
+                    <Setter Property="Cursor" Value="Arrow"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="SuccessButton" TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
+            <Setter Property="Background" Value="{StaticResource SuccessBrush}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource SuccessDarkBrush}"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#CBD5E1"/>
+                    <Setter Property="Foreground" Value="#64748B"/>
+                    <Setter Property="Cursor" Value="Arrow"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="SmallButton" TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="MinWidth" Value="78"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Margin" Value="4,0,0,0"/>
+        </Style>
+
+        <Style x:Key="SmallSuccessButton" TargetType="Button" BasedOn="{StaticResource SuccessButton}">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="MinWidth" Value="92"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Margin" Value="4,0,0,0"/>
+        </Style>
+
+        <Style TargetType="ComboBox">
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="BorderBrush" Value="#CBD5E1"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+
+        <Style TargetType="ListView">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="AlternationCount" Value="2"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        </Style>
+
+        <Style TargetType="ListViewItem">
+            <Setter Property="MinHeight" Value="58"/>
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Style.Triggers>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="#F8FAFC"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#EEF6FF"/>
+                </Trigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#DBEAFE"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="GridViewColumnHeader">
+            <Setter Property="Height" Value="38"/>
+            <Setter Property="Background" Value="#F1F5F9"/>
+            <Setter Property="Foreground" Value="#334155"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="10,0"/>
+            <Setter Property="BorderBrush" Value="#E2E8F0"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Margin="22">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <Border Grid.Row="0"
+                CornerRadius="18"
+                Padding="22"
+                Margin="0,0,0,18">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#0F172A" Offset="0"/>
+                    <GradientStop Color="#1E3A8A" Offset="0.58"/>
+                    <GradientStop Color="#2563EB" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <StackPanel>
+                    <TextBlock Text="Программы экструдера"
+                               FontSize="26"
+                               FontWeight="Bold"
+                               Foreground="White"/>
+                    <TextBlock Text="Настройка, активация и загрузка параметров экструзии для производственных партий"
+                               FontSize="13"
+                               Foreground="#C7D2FE"
+                               Margin="0,6,0,0"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Панель управления + пагинация -->
+        <Border Grid.Row="1"
+                Style="{StaticResource CardBorder}"
+                Margin="0,0,0,16">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="NewProgramButton"
+                        Grid.Column="0"
+                        Content="Новая программа"
+                        Style="{StaticResource SuccessButton}"
+                        Click="NewProgramButton_Click"/>
+
+                <StackPanel Grid.Column="2"
+                            Orientation="Horizontal"
+                            VerticalAlignment="Center">
+                    <TextBlock Text="Строк на странице:"
+                               VerticalAlignment="Center"
+                               Foreground="{StaticResource MutedTextBrush}"
+                               FontSize="13"
+                               Margin="0,0,8,0"/>
+
+                    <ComboBox x:Name="PageSizeCombo"
+                              Width="82"
+                              SelectedIndex="0"
+                              SelectionChanged="PageSize_SelectionChanged">
+                        <ComboBoxItem Content="10"/>
+                        <ComboBoxItem Content="20"/>
+                        <ComboBoxItem Content="50"/>
+                        <ComboBoxItem Content="100"/>
+                    </ComboBox>
+
+                    <Button x:Name="PrevPageBtn"
+                            Content="◀"
+                            Width="38"
+                            MinWidth="38"
+                            Style="{StaticResource PrimaryButton}"
+                            Margin="12,0,0,0"
+                            Click="PrevPage_Click"/>
+
+                    <TextBlock x:Name="PageInfoText"
+                               Text="Страница 1 из 1"
+                               VerticalAlignment="Center"
+                               Foreground="#334155"
+                               FontWeight="SemiBold"
+                               FontSize="13"
+                               Margin="12,0"/>
+
+                    <Button x:Name="NextPageBtn"
+                            Content="▶"
+                            Width="38"
+                            MinWidth="38"
+                            Style="{StaticResource PrimaryButton}"
+                            Margin="0"
+                            Click="NextPage_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Список программ -->
+        <Border Grid.Row="2"
+                Style="{StaticResource CardBorder}"
+                Padding="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0"
+                        Background="#F8FAFC"
+                        CornerRadius="16,16,0,0"
+                        Padding="16,14"
+                        BorderBrush="#E2E8F0"
+                        BorderThickness="0,0,0,1">
+                    <StackPanel>
+                        <TextBlock Text="Список программ"
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="#0F172A"/>
+                        <TextBlock Text="Просмотр зон, активация и загрузка программы в экструдер"
+                                   FontSize="12"
+                                   Foreground="{StaticResource MutedTextBrush}"
+                                   Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <ListView x:Name="ProgramsListView"
+                          Grid.Row="1"
+                          SelectionMode="Single"
+                          MinHeight="430">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID" Width="60">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border Background="#EEF2FF"
+                                                CornerRadius="8"
+                                                Width="42"
+                                                Height="28"
+                                                HorizontalAlignment="Center">
+                                            <TextBlock Text="{Binding Id}"
+                                                       FontWeight="Bold"
+                                                       Foreground="{StaticResource PrimaryBrush}"
+                                                       HorizontalAlignment="Center"
+                                                       VerticalAlignment="Center"/>
+                                        </Border>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Название" Width="230">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Name}"
+                                                       FontWeight="SemiBold"
+                                                       Foreground="#0F172A"
+                                                       TextWrapping="Wrap"/>
+                                            <TextBlock Text="{Binding Description}"
+                                                       FontSize="11"
+                                                       Foreground="{StaticResource MutedTextBrush}"
+                                                       TextWrapping="Wrap"
+                                                       Margin="0,3,0,0"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Продукт" Width="180">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding ProductName}"
+                                                   Foreground="#334155"
+                                                   TextWrapping="Wrap"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Статус" Width="130">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border CornerRadius="10"
+                                                Padding="10,4"
+                                                HorizontalAlignment="Left">
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="Background" Value="#E2E8F0"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Status}" Value="Активна">
+                                                            <Setter Property="Background" Value="#DCFCE7"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Status}" Value="Черновик">
+                                                            <Setter Property="Background" Value="#FEF3C7"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Status}" Value="Архивирована">
+                                                            <Setter Property="Background" Value="#F1F5F9"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+
+                                            <TextBlock Text="{Binding Status}"
+                                                       FontWeight="Bold"
+                                                       FontSize="12">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Foreground" Value="#475569"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Status}" Value="Активна">
+                                                                <Setter Property="Foreground" Value="#15803D"/>
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding Status}" Value="Черновик">
+                                                                <Setter Property="Foreground" Value="#B45309"/>
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding Status}" Value="Архивирована">
+                                                                <Setter Property="Foreground" Value="#64748B"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </Border>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Дата создания" Width="135">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding CreatedAt, StringFormat='dd.MM.yyyy'}"
+                                                   Foreground="#475569"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Действия" Width="310">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal"
+                                                    HorizontalAlignment="Center"
+                                                    VerticalAlignment="Center">
+                                            <Button Content="Зоны"
+                                                    Tag="{Binding Id}"
+                                                    Style="{StaticResource SmallButton}"
+                                                    ToolTip="Просмотр зон экструдера"
+                                                    Click="ViewZones_Click"/>
+
+                                            <Button Content="Активировать"
+                                                    Tag="{Binding Id}"
+                                                    Style="{StaticResource SmallSuccessButton}"
+                                                    ToolTip="Активировать программу"
+                                                    Visibility="{Binding Status, Converter={StaticResource StatusToVisibilityConverter}, ConverterParameter=Черновик}"
+                                                    Click="ActivateProgram_Click"/>
+
+                                            <Button Content="Загрузить"
+                                                    Tag="{Binding Id}"
+                                                    Style="{StaticResource SmallButton}"
+                                                    ToolTip="Загрузить программу в экструдер"
+                                                    Click="LoadProgram_Click"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </Border>
+
+        <!-- Статус -->
+        <Border Grid.Row="3"
+                Background="#E2E8F0"
+                CornerRadius="10"
+                Padding="12"
+                Margin="0,14,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock x:Name="StatusText"
+                           Text="Готов"
+                           Foreground="#475569"
+                           FontSize="12"
+                           VerticalAlignment="Center"/>
+
+                <TextBlock x:Name="LastUpdatedText"
+                           Grid.Column="1"
+                           Text=""
+                           Foreground="{StaticResource MutedTextBrush}"
+                           FontSize="12"
+                           VerticalAlignment="Center"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

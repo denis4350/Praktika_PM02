@@ -1,0 +1,129 @@
+﻿<Window x:Class="SZR_LaboratoryApp.Views.ProductBatchCardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Карточка партии готовой продукции" Height="550" Width="750"
+        WindowStartupLocation="CenterOwner" WindowStyle="SingleBorderWindow">
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <Border Grid.Row="0" Background="#2C3E50" CornerRadius="8" Padding="15" Margin="0,0,0,15">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="🏭" FontSize="24" Margin="0,0,10,0"/>
+                <TextBlock Text="Карточка партии готовой продукции" FontSize="18" FontWeight="Bold" Foreground="White"/>
+                <TextBlock x:Name="StatusBadge" Text="" FontSize="12" Margin="15,0,0,0" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Основная информация -->
+        <Border Grid.Row="1" Background="White" CornerRadius="8" Padding="15" Margin="0,0,0,15" BorderBrush="#E0E0E0" BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="№ партии:" FontWeight="Bold" Margin="5" VerticalAlignment="Center"/>
+                <TextBlock x:Name="BatchNumberText" Grid.Row="0" Grid.Column="1" Margin="5" VerticalAlignment="Center" FontWeight="Bold"/>
+
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="Статус:" FontWeight="Bold" Margin="5" VerticalAlignment="Center"/>
+                <TextBlock x:Name="StatusText" Grid.Row="0" Grid.Column="3" Margin="5" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Продукт:" FontWeight="Bold" Margin="5" VerticalAlignment="Center"/>
+                <TextBlock x:Name="ProductNameText" Grid.Row="1" Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="2" Text="Линия:" FontWeight="Bold" Margin="5" VerticalAlignment="Center"/>
+                <TextBlock x:Name="LineText" Grid.Row="1" Grid.Column="3" Margin="5" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Дата начала:" FontWeight="Bold" Margin="5" VerticalAlignment="Center"/>
+                <TextBlock x:Name="StartedAtText" Grid.Row="2" Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="2" Text="Дата окончания:" FontWeight="Bold" Margin="5" VerticalAlignment="Center"/>
+                <TextBlock x:Name="FinishedAtText" Grid.Row="2" Grid.Column="3" Margin="5" VerticalAlignment="Center"/>
+            </Grid>
+        </Border>
+
+        <!-- Список испытаний -->
+        <Border Grid.Row="2" Background="White" CornerRadius="8" Padding="15" Margin="0,0,0,15" BorderBrush="#E0E0E0" BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="📋 Испытания" FontSize="14" FontWeight="Bold" Margin="0,0,0,10"/>
+                <Button x:Name="NewTestButton" Grid.Row="1" Content="➕ Новое испытание" Width="140" Height="30" 
+                        HorizontalAlignment="Right" Margin="0,0,0,10" Click="NewTestButton_Click"
+                        Background="#28A745" Foreground="White" BorderThickness="0" Cursor="Hand"/>
+
+                <DataGrid x:Name="TestsGrid" Grid.Row="2" AutoGenerateColumns="False" SelectionMode="Single" MinHeight="150">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="№ испытания" Binding="{Binding testNumber}" Width="100"/>
+                        <DataGridTextColumn Header="Тип" Binding="{Binding testType}" Width="100"/>
+                        <DataGridTextColumn Header="Дата" Binding="{Binding assignedAt, StringFormat='dd.MM.yyyy'}" Width="100"/>
+                        <DataGridTextColumn Header="Исполнитель" Binding="{Binding executedBy}" Width="120"/>
+                        <DataGridTextColumn Header="Статус" Binding="{Binding status}" Width="100"/>
+                        <DataGridTextColumn Header="Результат" Binding="{Binding Result}" Width="120"/>
+                        <DataGridTemplateColumn Header="Действия" Width="80">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Подробнее" Click="ViewTest_Click" Tag="{Binding}" 
+                                            Background="#2E75B6" Foreground="White" Padding="8,4" BorderThickness="0" Cursor="Hand"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Border>
+
+        <!-- Блок принятия решения -->
+        <Border Grid.Row="3" Background="#FFF8E1" CornerRadius="8" Padding="15" BorderBrush="#FFE082" BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="🔬 Лабораторное решение" FontSize="14" FontWeight="Bold" Margin="0,0,0,10"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Текущий статус:" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock x:Name="CurrentStatusText" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontWeight="Bold"/>
+
+                <Button x:Name="ApproveButton" Grid.Row="2" Grid.ColumnSpan="2" Content="✅ Разрешить партию" 
+                        Width="150" Height="35" HorizontalAlignment="Center" Margin="0,15,0,0"
+                        Background="#28A745" Foreground="White" Click="ApproveButton_Click" Cursor="Hand"/>
+
+                <Button x:Name="BlockButton" Grid.Row="2" Grid.ColumnSpan="2" Content="❌ Заблокировать партию" 
+                        Width="150" Height="35" HorizontalAlignment="Right" Margin="0,15,160,0"
+                        Background="#DC3545" Foreground="White" Click="BlockButton_Click" Cursor="Hand" Visibility="Collapsed"/>
+            </Grid>
+        </Border>
+
+        <!-- Кнопки -->
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0">
+            <Button x:Name="CloseButton" Content="✖ Закрыть" Width="100" Height="35" 
+                    Background="#6C757D" Foreground="White" Click="CloseButton_Click" Cursor="Hand"/>
+        </StackPanel>
+    </Grid>
+</Window>

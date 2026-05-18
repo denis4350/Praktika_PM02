@@ -1,0 +1,198 @@
+﻿<Window x:Class="SZR_LaboratoryApp.Views.TestForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="Новое испытание" Height="600" Width="700"
+        WindowStartupLocation="CenterOwner" WindowStyle="SingleBorderWindow">
+
+    <Window.Resources>
+        <Style x:Key="ActionButton" TargetType="Button">
+            <Setter Property="Background" Value="#2E75B6"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="12,8"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#1E5A8A"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="SuccessButton" TargetType="Button">
+            <Setter Property="Background" Value="#28A745"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="12,8"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#1E7E34"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="8,0"/>
+            <Setter Property="BorderBrush" Value="#D3D3D3"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+
+        <Style TargetType="ComboBox">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="8,0"/>
+            <Setter Property="BorderBrush" Value="#D3D3D3"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <Border Grid.Row="0" Background="#2C3E50" CornerRadius="8" Padding="12" Margin="0,0,0,15">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="🔬" FontSize="20" Margin="0,0,10,0"/>
+                <TextBlock Text="Новое лабораторное испытание" FontSize="16" FontWeight="Bold" Foreground="White"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Информация о партии (автозаполнение) -->
+        <Border Grid.Row="1" Background="#F0F8FF" CornerRadius="8" Padding="12" Margin="0,0,0,15" BorderBrush="#ADD8E6" BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Партия:" FontWeight="Bold" Margin="5" VerticalAlignment="Center"/>
+                <TextBlock x:Name="BatchNumberText" Grid.Row="0" Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="Материал:" FontWeight="Bold" Margin="5" VerticalAlignment="Center"/>
+                <TextBlock x:Name="MaterialNameText" Grid.Row="0" Grid.Column="3" Margin="5" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Поставщик:" FontWeight="Bold" Margin="5" VerticalAlignment="Center"/>
+                <TextBlock x:Name="SupplierText" Grid.Row="1" Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="2" Text="Дата поступления:" FontWeight="Bold" Margin="5" VerticalAlignment="Center"/>
+                <TextBlock x:Name="ArrivalDateText" Grid.Row="1" Grid.Column="3" Margin="5" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Количество:" FontWeight="Bold" Margin="5" VerticalAlignment="Center"/>
+                <TextBlock x:Name="QuantityText" Grid.Row="2" Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="2" Text="Текущий статус:" FontWeight="Bold" Margin="5" VerticalAlignment="Center"/>
+                <TextBlock x:Name="CurrentStatusText" Grid.Row="2" Grid.Column="3" Margin="5" VerticalAlignment="Center"/>
+            </Grid>
+        </Border>
+
+        <!-- Параметры испытания -->
+        <TextBlock Grid.Row="2" Text="Параметры испытания" FontSize="14" FontWeight="Bold" Margin="0,0,0,10"/>
+
+        <Grid Grid.Row="3" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="Тип испытания:" FontWeight="Bold" VerticalAlignment="Center"/>
+            <ComboBox x:Name="TestTypeBox" Grid.Column="1" Height="30" Margin="0,0,10,0" SelectedIndex="0">
+                <ComboBoxItem Content="Входной контроль"/>
+                <ComboBoxItem Content="Повторный анализ"/>
+                <ComboBoxItem Content="Контроль качества"/>
+                <ComboBoxItem Content="Арбитражный анализ"/>
+            </ComboBox>
+
+            <TextBlock Grid.Column="2" Text="Приоритет:" FontWeight="Bold" VerticalAlignment="Center"/>
+            <ComboBox x:Name="PriorityBox" Grid.Column="3" Height="30" SelectedIndex="0">
+                <ComboBoxItem Content="Обычный"/>
+                <ComboBoxItem Content="Высокий"/>
+                <ComboBoxItem Content="Срочный"/>
+            </ComboBox>
+        </Grid>
+
+        <Grid Grid.Row="4" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="Исполнитель:" FontWeight="Bold" VerticalAlignment="Center"/>
+            <TextBox x:Name="ExecutorBox" Grid.Column="1" Height="30" Margin="0,0,10,0"/>
+
+            <TextBlock Grid.Column="2" Text="Дата назначения:" FontWeight="Bold" VerticalAlignment="Center"/>
+            <DatePicker x:Name="AssignedDatePicker" Grid.Column="3" Height="30" SelectedDate="{x:Static sys:DateTime.Now}"/>
+        </Grid>
+
+        <TextBlock Grid.Row="5" Text="Комментарий:" FontWeight="Bold" Margin="0,0,0,5"/>
+        <TextBox x:Name="CommentBox" Grid.Row="6" Height="60" TextWrapping="Wrap" AcceptsReturn="True" Margin="0,0,0,10"/>
+
+        <!-- Контролируемые параметры -->
+        <Border Grid.Row="7" Background="#F8F9FA" CornerRadius="8" Padding="10" Margin="0,0,0,10" BorderBrush="#E0E0E0" BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock Text="📊 Контролируемые параметры" FontSize="13" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <Button x:Name="AddParameterButton" Content="+ Добавить параметр" Width="130" Height="28" 
+                            Margin="15,0,0,0" Background="#28A745" Foreground="White" Click="AddParameterButton_Click"/>
+                </StackPanel>
+
+                <DataGrid x:Name="ParametersGrid" Grid.Row="2" AutoGenerateColumns="False" MinHeight="150">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Параметр" Binding="{Binding parameterName}" Width="2*"/>
+                        <DataGridTextColumn Header="Норма мин" Binding="{Binding normMin}" Width="*"/>
+                        <DataGridTextColumn Header="Норма макс" Binding="{Binding normMax}" Width="*"/>
+                        <DataGridTextColumn Header="Ед.изм" Binding="{Binding unit}" Width="*"/>
+                        <DataGridTemplateColumn Header="Действия" Width="60">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="🗑" Click="RemoveParameter_Click" Tag="{Binding}" 
+                                            Background="#DC3545" Foreground="White" Width="30" Height="25"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Border>
+
+        <!-- Кнопки -->
+        <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button x:Name="SaveButton" Content="💾 Сохранить" Width="120" Height="35" Style="{StaticResource SuccessButton}"/>
+            <Button x:Name="CancelButton" Content="❌ Отмена" Width="100" Height="35" Style="{StaticResource ActionButton}" Click="CancelButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

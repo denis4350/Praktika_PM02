@@ -1,0 +1,438 @@
+﻿<Window x:Class="SZR_TechnologistApp.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Авторизация"
+        Height="820"
+        Width="470"
+        MinHeight="700"
+        MinWidth="450"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        KeyDown="Window_KeyDown"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="PrimaryBrush" Color="#2563EB"/>
+        <SolidColorBrush x:Key="PrimaryDarkBrush" Color="#1D4ED8"/>
+        <SolidColorBrush x:Key="SuccessBrush" Color="#16A34A"/>
+        <SolidColorBrush x:Key="SuccessDarkBrush" Color="#15803D"/>
+        <SolidColorBrush x:Key="DangerBrush" Color="#DC2626"/>
+        <SolidColorBrush x:Key="MutedTextBrush" Color="#64748B"/>
+        <SolidColorBrush x:Key="CardBorderBrush" Color="#DDE3EC"/>
+
+        <Style x:Key="WindowButton" TargetType="Button">
+            <Setter Property="Width" Value="32"/>
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#94A3B8"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="#0F172A"/>
+                    <Setter Property="Background" Value="#F1F5F9"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="InputField" TargetType="TextBox">
+            <Setter Property="Height" Value="38"/>
+            <Setter Property="Background" Value="#F8FAFC"/>
+            <Setter Property="BorderBrush" Value="#CBD5E1"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10,6"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="PasswordField" TargetType="PasswordBox">
+            <Setter Property="Height" Value="38"/>
+            <Setter Property="Background" Value="#F8FAFC"/>
+            <Setter Property="BorderBrush" Value="#CBD5E1"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10,6"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="ComboBoxField" TargetType="ComboBox">
+            <Setter Property="Height" Value="38"/>
+            <Setter Property="Background" Value="#F8FAFC"/>
+            <Setter Property="BorderBrush" Value="#CBD5E1"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="8,5"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="PrimaryButton" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Height" Value="42"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="14,8"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="11"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource PrimaryDarkBrush}"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#CBD5E1"/>
+                    <Setter Property="Foreground" Value="#64748B"/>
+                    <Setter Property="Cursor" Value="Arrow"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="SuccessButton" TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
+            <Setter Property="Background" Value="{StaticResource SuccessBrush}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource SuccessDarkBrush}"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#CBD5E1"/>
+                    <Setter Property="Foreground" Value="#64748B"/>
+                    <Setter Property="Cursor" Value="Arrow"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="RefreshCaptchaButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#334155"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Width" Value="46"/>
+            <Setter Property="Height" Value="46"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="12">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#1E293B"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#CBD5E1"/>
+                    <Setter Property="Foreground" Value="#64748B"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="FieldLabel" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#334155"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="0,0,0,5"/>
+        </Style>
+
+        <Style x:Key="TabText" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Border Width="430"
+                Height="690"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Background="White"
+                CornerRadius="22"
+                BorderBrush="{StaticResource CardBorderBrush}"
+                BorderThickness="1">
+            <Border.Effect>
+                <DropShadowEffect Color="#334155"
+                                  BlurRadius="28"
+                                  ShadowDepth="4"
+                                  Opacity="0.28"/>
+            </Border.Effect>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Верхняя панель окна -->
+                <Grid Grid.Row="0" Height="44">
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Right"
+                                Margin="0,8,10,0">
+                        <Button x:Name="MinimizeButton"
+                                Content="—"
+                                Style="{StaticResource WindowButton}"
+                                Click="MinimizeButton_Click"/>
+                        <Button x:Name="CloseButton"
+                                Content="✕"
+                                Style="{StaticResource WindowButton}"
+                                Click="CloseButton_Click"/>
+                    </StackPanel>
+                </Grid>
+
+                <ScrollViewer Grid.Row="1"
+                              VerticalScrollBarVisibility="Auto"
+                              Padding="0">
+                    <Grid Margin="28,0,28,22">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Заголовок -->
+                        <StackPanel Grid.Row="0" Margin="0,0,0,18">
+
+                                <Image x:Name="LogoImage" 
+       Source="/Resources/logo.png" 
+       Width="80" 
+       Height="80" 
+       HorizontalAlignment="Center"
+       Margin="-7,0,0,2"/>
+
+
+                            <TextBlock Text="СЗР Производство"
+                                       FontSize="24"
+                                       FontWeight="Bold"
+                                       Foreground="#0F172A"
+                                       TextAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                            <TextBlock Text="Модуль технолога"
+                                       FontSize="13"
+                                       Foreground="{StaticResource MutedTextBrush}"
+                                       TextAlignment="Center"
+                                       Margin="0,5,0,0"/>
+                        </StackPanel>
+
+                        <!-- Вкладки -->
+                        <Border Grid.Row="1"
+                                Background="#F1F5F9"
+                                CornerRadius="14"
+                                Padding="4"
+                                Margin="0,0,0,16">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border x:Name="LoginTabPanel"
+                                        Grid.Column="0"
+                                        Background="White"
+                                        CornerRadius="11"
+                                        Padding="14,9"
+                                        Cursor="Hand"
+                                        MouseLeftButtonUp="LoginTab_Click">
+                                    <TextBlock x:Name="LoginTabText"
+                                               Text="Вход"
+                                               Style="{StaticResource TabText}"
+                                               Foreground="{StaticResource PrimaryBrush}"/>
+                                </Border>
+
+                                <Border x:Name="RegisterTabPanel"
+                                        Grid.Column="1"
+                                        Background="Transparent"
+                                        CornerRadius="11"
+                                        Padding="14,9"
+                                        Cursor="Hand"
+                                        MouseLeftButtonUp="RegisterTab_Click">
+                                    <TextBlock x:Name="RegisterTabText"
+                                               Text="Регистрация"
+                                               Style="{StaticResource TabText}"
+                                               Foreground="{StaticResource MutedTextBrush}"/>
+                                </Border>
+                            </Grid>
+                        </Border>
+
+                        <!-- Ошибка -->
+                        <Border x:Name="ErrorPanel"
+                                Grid.Row="2"
+                                Background="#FEF2F2"
+                                BorderBrush="#FECACA"
+                                BorderThickness="1"
+                                CornerRadius="10"
+                                Padding="10"
+                                Margin="0,0,0,14"
+                                Visibility="Collapsed">
+                            <TextBlock x:Name="ErrorText"
+                                       Foreground="{StaticResource DangerBrush}"
+                                       FontSize="12"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Center"/>
+                        </Border>
+
+                        <!-- Вход -->
+                        <StackPanel x:Name="LoginPanel"
+                                    Grid.Row="3">
+                            <TextBlock Text="Логин" Style="{StaticResource FieldLabel}"/>
+                            <TextBox x:Name="LoginBox"
+                                     Style="{StaticResource InputField}"/>
+
+                            <TextBlock Text="Пароль"
+                                       Style="{StaticResource FieldLabel}"
+                                       Margin="0,12,0,5"/>
+                            <PasswordBox x:Name="PasswordBox"
+                                         Style="{StaticResource PasswordField}"/>
+
+                            <TextBlock Text="Код с картинки"
+                                       Style="{StaticResource FieldLabel}"
+                                       Margin="0,15,0,5"/>
+
+                            <Grid Margin="0,0,0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border Grid.Column="0"
+                                        Background="#F8FAFC"
+                                        BorderBrush="#CBD5E1"
+                                        BorderThickness="1"
+                                        CornerRadius="12"
+                                        Height="60">
+                                    <Image x:Name="CaptchaImage"
+                                           Stretch="Uniform"
+                                           Margin="8"/>
+                                </Border>
+
+                                <Button x:Name="RefreshCaptchaButton"
+                                        Grid.Column="1"
+                                        Content="↻"
+                                        Margin="10,0,0,0"
+                                        Style="{StaticResource RefreshCaptchaButtonStyle}"
+                                        Click="RefreshCaptchaButton_Click"/>
+                            </Grid>
+
+                            <TextBox x:Name="CaptchaInputBox"
+                                     Style="{StaticResource InputField}"
+                                     Margin="0,0,0,15"/>
+
+                            <Button x:Name="LoginButton"
+                                    Content="ВОЙТИ"
+                                    Style="{StaticResource PrimaryButton}"
+                                    Click="LoginButton_Click"/>
+                        </StackPanel>
+
+                        <!-- Регистрация -->
+                        <StackPanel x:Name="RegisterPanel"
+                                    Grid.Row="3"
+                                    Visibility="Collapsed">
+                            <TextBlock Text="Логин" Style="{StaticResource FieldLabel}"/>
+                            <TextBox x:Name="RegisterLoginBox"
+                                     Style="{StaticResource InputField}"/>
+
+                            <TextBlock Text="Пароль"
+                                       Style="{StaticResource FieldLabel}"
+                                       Margin="0,12,0,5"/>
+                            <PasswordBox x:Name="RegisterPasswordBox"
+                                         Style="{StaticResource PasswordField}"/>
+
+                            <TextBlock Text="ФИО"
+                                       Style="{StaticResource FieldLabel}"
+                                       Margin="0,12,0,5"/>
+                            <TextBox x:Name="RegisterFullNameBox"
+                                     Style="{StaticResource InputField}"/>
+
+                            <TextBlock Text="Отдел / подразделение"
+                                       Style="{StaticResource FieldLabel}"
+                                       Margin="0,12,0,5"/>
+                            <ComboBox x:Name="RegisterDepartmentComboBox"
+                                      Style="{StaticResource ComboBoxField}"
+                                      SelectedIndex="0">
+                                <ComboBoxItem Content="Технологический отдел"/>
+                                <ComboBoxItem Content="Цех №1"/>
+                                <ComboBoxItem Content="Цех №2"/>
+                                <ComboBoxItem Content="Лаборатория"/>
+                                <ComboBoxItem Content="ИТ отдел"/>
+                                <ComboBoxItem Content="Отдел качества"/>
+                            </ComboBox>
+
+                            <TextBlock Text="Код с картинки"
+                                       Style="{StaticResource FieldLabel}"
+                                       Margin="0,15,0,5"/>
+
+                            <Grid Margin="0,0,0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border Grid.Column="0"
+                                        Background="#F8FAFC"
+                                        BorderBrush="#CBD5E1"
+                                        BorderThickness="1"
+                                        CornerRadius="12"
+                                        Height="60">
+                                    <Image x:Name="RegCaptchaImage"
+                                           Stretch="Uniform"
+                                           Margin="8"/>
+                                </Border>
+
+                                <Button x:Name="RefreshRegCaptchaButton"
+                                        Grid.Column="1"
+                                        Content="↻"
+                                        Margin="10,0,0,0"
+                                        Style="{StaticResource RefreshCaptchaButtonStyle}"
+                                        Click="RefreshRegCaptchaButton_Click"/>
+                            </Grid>
+
+                            <TextBox x:Name="RegCaptchaInputBox"
+                                     Style="{StaticResource InputField}"
+                                     Margin="0,0,0,15"/>
+
+                            <Button x:Name="RegisterButton"
+                                    Content="ЗАРЕГИСТРИРОВАТЬСЯ"
+                                    Style="{StaticResource SuccessButton}"
+                                    Click="RegisterButton_Click"/>
+
+                            <TextBlock Text="Регистрация создаёт пользователя с ролью технолога. Если API не содержит /api/auth/register, регистрация вернёт ошибку."
+                                       Foreground="{StaticResource MutedTextBrush}"
+                                       FontSize="11"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Center"
+                                       Margin="0,10,0,0"/>
+                        </StackPanel>
+
+                        <TextBlock Grid.Row="4"
+                                   Text="© Система управления производством СЗР"
+                                   FontSize="11"
+                                   Foreground="#94A3B8"
+                                   TextAlignment="Center"
+                                   Margin="0,18,0,0"/>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

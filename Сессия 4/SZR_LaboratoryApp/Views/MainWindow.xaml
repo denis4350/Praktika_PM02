@@ -1,0 +1,244 @@
+﻿<Window x:Class="SZR_LaboratoryApp.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converters="clr-namespace:SZR_LaboratoryApp.Converters"
+        Title="СЗР Производство - Модуль лаборатории"
+        Height="768" Width="1200" WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
+
+    <Window.Resources>
+        <converters:StatusToColorConverter x:Key="StatusToColorConverter"/>
+        <converters:StatusToBackgroundConverter x:Key="StatusToBackgroundConverter"/>
+        <converters:BoolToYesNoConverter x:Key="BoolToYesNoConverter"/>
+
+        <Style x:Key="MenuButton" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="15,0"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#2C3E50"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="ActionButton" TargetType="Button">
+            <Setter Property="Background" Value="#2E75B6"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="12,8"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#1E5A8A"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- ВЕРХНЯЯ ПАНЕЛЬ -->
+        <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#2C3E50">
+            <Grid>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="20,0">
+                    <Image Source="/Resources/logo.png" Width="32" Height="32" Margin="0,0,10,0"/>
+                    <TextBlock Text="СЗР Производство" FontSize="18" FontWeight="Bold" Foreground="White"/>
+                    <TextBlock Text=" | Модуль лаборатории" FontSize="14" Foreground="#BDC3C7" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0">
+                    <Border Background="#34495E" CornerRadius="20" Padding="10,5">
+                        <TextBlock x:Name="UserInfoText" Foreground="#ECF0F1" VerticalAlignment="Center"/>
+                    </Border>
+                    <Button x:Name="LogoutButton" Content="🚪 Выход" Width="90" Height="32"
+                            Background="#E74C3C" Foreground="White" Cursor="Hand" Margin="15,0,0,0" Click="LogoutButton_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- ЛЕВОЕ МЕНЮ -->
+        <Border Grid.Row="1" Grid.Column="0" Background="#34495E">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel Margin="0">
+                    <Button x:Name="RawMaterialsMenu" Content="📦  Партии сырья" Style="{StaticResource MenuButton}"/>
+                    <Button x:Name="ProductsMenu" Content="🏭  Готовая продукция" Style="{StaticResource MenuButton}"/>
+                    <Button x:Name="HistoryMenu" Content="📋  История испытаний" Style="{StaticResource MenuButton}"/>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <Border Grid.Row="1" Grid.Column="1" Background="#F4F6F9" Padding="15">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock x:Name="ContentTitle" Text="Партии сырья" FontSize="24" FontWeight="Bold" Foreground="#2C3E50" Margin="0,0,0,15"/>
+
+                <!-- Панель поиска и фильтров -->
+                <Border Grid.Row="1" Background="White" CornerRadius="8" Padding="10" Margin="0,0,0,10">
+                    <StackPanel>
+                        <Grid Margin="0,0,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox x:Name="SearchBox" Grid.Column="0" Height="32" 
+                                     Background="#F8F9FA" BorderBrush="#D3D3D3" BorderThickness="1"
+                                     Padding="10,5" TextChanged="SearchBox_TextChanged"/>
+                            <Button x:Name="RefreshButton" Grid.Column="1" Content="🔄 Обновить" Height="32"
+                                    Style="{StaticResource ActionButton}" Click="RefreshButton_Click" Margin="10,0,10,0"/>
+                        </Grid>
+                        <WrapPanel>
+                            <ComboBox x:Name="StatusFilterBox" Width="120" Height="32" Margin="0,0,10,0"
+                                      SelectionChanged="StatusFilter_SelectionChanged">
+                                <ComboBoxItem Content="Все статусы" IsSelected="True"/>
+                                <ComboBoxItem Content="Ожидает"/>
+                                <ComboBoxItem Content="В работе"/>
+                                <ComboBoxItem Content="Разрешена"/>
+                                <ComboBoxItem Content="Заблокирована"/>
+                            </ComboBox>
+
+                            <ComboBox x:Name="SupplierFilterBox" Width="150" Height="32" Margin="0,0,10,0"
+                                      SelectionChanged="SupplierFilter_SelectionChanged" Visibility="Collapsed">
+                                <ComboBoxItem Content="Все поставщики" IsSelected="True"/>
+                            </ComboBox>
+
+                            <DatePicker x:Name="StartDatePicker" Width="120" Height="32" Margin="0,0,5,0"
+                                        SelectedDateChanged="DateFilter_Changed"/>
+                            <TextBlock Text="—" VerticalAlignment="Center" Margin="0,0,5,0" FontSize="14" Foreground="#666"/>
+                            <DatePicker x:Name="EndDatePicker" Width="120" Height="32" Margin="0,0,10,0"
+                                        SelectedDateChanged="DateFilter_Changed"/>
+                        </WrapPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- DataGrid для партий сырья -->
+                <DataGrid x:Name="RawMaterialGrid" Grid.Row="2" AutoGenerateColumns="False"
+                          SelectionMode="Single" IsReadOnly="True" MouseDoubleClick="Batch_DoubleClick"
+                          Visibility="Visible">
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Background" Value="{Binding labStatus, Converter={StaticResource StatusToBackgroundConverter}}"/>
+                        </Style>
+                    </DataGrid.RowStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="№ партии" Binding="{Binding batchNumber}" Width="100"/>
+                        <DataGridTextColumn Header="№ поставщика" Binding="{Binding supplierBatch}" Width="100"/>
+                        <DataGridTextColumn Header="Материал" Binding="{Binding materialName}" Width="150"/>
+                        <DataGridTextColumn Header="Категория" Binding="{Binding category}" Width="100"/>
+                        <DataGridTextColumn Header="Поставщик" Binding="{Binding supplier}" Width="120"/>
+                        <DataGridTextColumn Header="Дата" Binding="{Binding arrivalDate, StringFormat='dd.MM.yyyy'}" Width="90"/>
+                        <DataGridTextColumn Header="Кол-во" Binding="{Binding quantity}" Width="80"/>
+                        <DataGridTextColumn Header="Ед.изм" Binding="{Binding unit}" Width="60"/>
+                        <DataGridTemplateColumn Header="Статус" Width="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding labStatus}" 
+                                               Foreground="{Binding labStatus, Converter={StaticResource StatusToColorConverter}}"
+                                               FontWeight="Bold"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Действия" Width="150">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Content="🔬 Испытание"
+                                                Background="#27AE60" Foreground="White"
+                                                Click="CreateTest_Click"
+                                                Tag="{Binding batchNumber}"/>
+                                        <Button Content="📄 Просмотр"
+                                                Background="#2E75B6" Foreground="White"
+                                                Click="ViewTest_Click"
+                                                Tag="{Binding batchNumber}"
+                                                Margin="5,0,0,0"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <!-- DataGrid для партий продукции -->
+                <DataGrid x:Name="ProductGrid" Grid.Row="2" AutoGenerateColumns="False"
+                          SelectionMode="Single" IsReadOnly="True" MouseDoubleClick="Batch_DoubleClick"
+                          Visibility="Collapsed">
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Background" Value="{Binding labStatus, Converter={StaticResource StatusToBackgroundConverter}}"/>
+                        </Style>
+                    </DataGrid.RowStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="№ партии" Binding="{Binding batchNumber}" Width="120"/>
+                        <DataGridTextColumn Header="Продукт" Binding="{Binding productName}" Width="150"/>
+                        <DataGridTextColumn Header="Линия" Binding="{Binding line}" Width="80"/>
+                        <DataGridTextColumn Header="Статус" Binding="{Binding status}" Width="100"/>
+                        <DataGridTextColumn Header="Лаб.статус" Binding="{Binding labStatus}" Width="100"/>
+                        <DataGridTextColumn Header="Дата окончания" Binding="{Binding finishedAt, StringFormat='dd.MM.yyyy'}" Width="100"/>
+                        <DataGridTemplateColumn Header="Действия" Width="150">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Content="🔬 Испытание"
+                                                Background="#27AE60" Foreground="White"
+                                                Click="CreateTest_Click"
+                                                Tag="{Binding batchNumber}"/>
+                                        <Button Content="📄 Просмотр"
+                                                Background="#2E75B6" Foreground="White"
+                                                Click="ViewTest_Click"
+                                                Tag="{Binding batchNumber}"
+                                                Margin="5,0,0,0"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <!-- DataGrid для истории испытаний -->
+                <DataGrid x:Name="HistoryGrid" Grid.Row="2" AutoGenerateColumns="False"
+                          SelectionMode="Single" IsReadOnly="True" Visibility="Collapsed">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="№ испытания" Binding="{Binding testNumber}" Width="100"/>
+                        <DataGridTextColumn Header="Тип" Binding="{Binding testType}" Width="120"/>
+                        <DataGridTextColumn Header="Объект" Binding="{Binding objectName}" Width="100"/>
+                        <DataGridTextColumn Header="Дата назначения" Binding="{Binding assignedAt, StringFormat='dd.MM.yyyy'}" Width="100"/>
+                        <DataGridTextColumn Header="Дата завершения" Binding="{Binding executedAt, StringFormat='dd.MM.yyyy'}" Width="100"/>
+                        <DataGridTextColumn Header="Статус" Binding="{Binding status}" Width="100"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Border>
+
+        <!-- НИЖНЯЯ ПАНЕЛЬ -->
+        <Border Grid.Row="2" Grid.ColumnSpan="2" Background="#ECF0F1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="© 2024 Система управления производством СЗР" Foreground="#7F8C8D" FontSize="11"/>
+                <TextBlock x:Name="StatusBarText" Text=" Готов" Foreground="#27AE60" FontSize="11" Margin="20,0,0,0"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

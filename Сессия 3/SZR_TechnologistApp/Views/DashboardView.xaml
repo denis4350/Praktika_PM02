@@ -1,0 +1,546 @@
+﻿<UserControl x:Class="SZR_TechnologistApp.Views.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converters="clr-namespace:SZR_TechnologistApp.Converters"
+             mc:Ignorable="d"
+             d:DesignHeight="760"
+             d:DesignWidth="1120"
+             Background="#EEF2F7">
+
+    <UserControl.Resources>
+        <converters:SeverityToColorConverter x:Key="SeverityToColorConverter"/>
+
+        <SolidColorBrush x:Key="PrimaryTextBrush" Color="#0F172A"/>
+        <SolidColorBrush x:Key="MutedTextBrush" Color="#64748B"/>
+        <SolidColorBrush x:Key="CardBorderBrush" Color="#DDE3EC"/>
+        <SolidColorBrush x:Key="PrimaryBrush" Color="#2563EB"/>
+        <SolidColorBrush x:Key="PrimaryDarkBrush" Color="#1D4ED8"/>
+        <SolidColorBrush x:Key="DangerBrush" Color="#DC2626"/>
+        <SolidColorBrush x:Key="WarningBrush" Color="#F59E0B"/>
+        <SolidColorBrush x:Key="SuccessBrush" Color="#16A34A"/>
+
+        <Style x:Key="CardBorder" TargetType="Border">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="CornerRadius" Value="16"/>
+            <Setter Property="Padding" Value="16"/>
+            <Setter Property="BorderBrush" Value="{StaticResource CardBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#9AA8BA"
+                                      BlurRadius="14"
+                                      ShadowDepth="2"
+                                      Opacity="0.14"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="KpiCard" TargetType="Border">
+            <Setter Property="Width" Value="208"/>
+            <Setter Property="Height" Value="118"/>
+            <Setter Property="CornerRadius" Value="16"/>
+            <Setter Property="Padding" Value="16"/>
+            <Setter Property="Margin" Value="0,0,14,14"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#64748B"
+                                      BlurRadius="12"
+                                      ShadowDepth="2"
+                                      Opacity="0.18"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="KpiNumber" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="31"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="KpiLabel" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="#EEF2FF"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+        </Style>
+
+        <Style x:Key="SectionTitle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}"/>
+        </Style>
+
+        <Style x:Key="SmallMutedText" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="{StaticResource MutedTextBrush}"/>
+        </Style>
+
+        <Style x:Key="PrimaryButton" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="MinWidth" Value="112"/>
+            <Setter Property="Padding" Value="14,7"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="10"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource PrimaryDarkBrush}"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#CBD5E1"/>
+                    <Setter Property="Foreground" Value="#64748B"/>
+                    <Setter Property="Cursor" Value="Arrow"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="ListView">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        </Style>
+
+        <Style TargetType="ListViewItem">
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Margin" Value="0,0,0,8"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#F1F5F9"/>
+                </Trigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#DBEAFE"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="22">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Заголовок -->
+            <Border Grid.Row="0"
+                    CornerRadius="18"
+                    Padding="22"
+                    Margin="0,0,0,18">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#0F172A" Offset="0"/>
+                        <GradientStop Color="#1E3A8A" Offset="0.58"/>
+                        <GradientStop Color="#2563EB" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel>
+                        <TextBlock Text="Панель управления"
+                                   FontSize="26"
+                                   FontWeight="Bold"
+                                   Foreground="White"/>
+                        <TextBlock Text="Сводка по продуктам, рецептурам, партиям, отклонениям и лабораторному контролю"
+                                   FontSize="13"
+                                   Foreground="#C7D2FE"
+                                   Margin="0,6,0,0"/>
+                        <TextBlock x:Name="LastUpdatedText"
+                                   Text="Данные ещё не загружены"
+                                   FontSize="12"
+                                   Foreground="#BFDBFE"
+                                   Margin="0,8,0,0"/>
+                    </StackPanel>
+
+                    <Button x:Name="RefreshButton"
+                            Grid.Column="1"
+                            Content="Обновить"
+                            Style="{StaticResource PrimaryButton}"
+                            VerticalAlignment="Center"
+                            Click="RefreshButton_Click"/>
+                </Grid>
+            </Border>
+
+            <!-- Ошибка -->
+            <Border x:Name="ErrorPanel"
+                    Grid.Row="1"
+                    Background="#FEF2F2"
+                    BorderBrush="#FECACA"
+                    BorderThickness="1"
+                    CornerRadius="12"
+                    Padding="12"
+                    Margin="0,0,0,16"
+                    Visibility="Collapsed">
+                <TextBlock x:Name="ErrorText"
+                           Foreground="{StaticResource DangerBrush}"
+                           FontSize="13"
+                           TextWrapping="Wrap"/>
+            </Border>
+
+            <!-- KPI карточки -->
+            <WrapPanel Grid.Row="2"
+                       Margin="0,0,0,8">
+
+                <Border Style="{StaticResource KpiCard}"
+                        Tag="products"
+                        MouseLeftButtonUp="Card_Click">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#2563EB" Offset="0"/>
+                            <GradientStop Color="#60A5FA" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Продукция" Foreground="#DBEAFE" FontWeight="SemiBold"/>
+                        <TextBlock x:Name="ActiveProductsText" Grid.Row="1" Text="0" Style="{StaticResource KpiNumber}"/>
+                        <TextBlock Grid.Row="2" Text="Активных продуктов" Style="{StaticResource KpiLabel}"/>
+                    </Grid>
+                </Border>
+
+                <Border Style="{StaticResource KpiCard}"
+                        Tag="recipes"
+                        MouseLeftButtonUp="Card_Click">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#16A34A" Offset="0"/>
+                            <GradientStop Color="#4ADE80" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Рецептуры" Foreground="#DCFCE7" FontWeight="SemiBold"/>
+                        <TextBlock x:Name="ActiveRecipesText" Grid.Row="1" Text="0" Style="{StaticResource KpiNumber}"/>
+                        <TextBlock Grid.Row="2" Text="Действующих рецептур" Style="{StaticResource KpiLabel}"/>
+                    </Grid>
+                </Border>
+
+                <Border Style="{StaticResource KpiCard}"
+                        Tag="techcards"
+                        MouseLeftButtonUp="Card_Click">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#F59E0B" Offset="0"/>
+                            <GradientStop Color="#FBBF24" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Техкарты" Foreground="#FEF3C7" FontWeight="SemiBold"/>
+                        <TextBlock x:Name="ActiveTechCardsText" Grid.Row="1" Text="0" Style="{StaticResource KpiNumber}"/>
+                        <TextBlock Grid.Row="2" Text="Технологических карт" Style="{StaticResource KpiLabel}"/>
+                    </Grid>
+                </Border>
+
+                <Border Style="{StaticResource KpiCard}"
+                        Tag="orders"
+                        MouseLeftButtonUp="Card_Click">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#7C3AED" Offset="0"/>
+                            <GradientStop Color="#A78BFA" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Заказы" Foreground="#EDE9FE" FontWeight="SemiBold"/>
+                        <TextBlock x:Name="OrdersInProgressText" Grid.Row="1" Text="0" Style="{StaticResource KpiNumber}"/>
+                        <TextBlock Grid.Row="2" Text="Заказов в работе" Style="{StaticResource KpiLabel}"/>
+                    </Grid>
+                </Border>
+
+                <Border Style="{StaticResource KpiCard}"
+                        Tag="batches"
+                        MouseLeftButtonUp="Card_Click">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#DC2626" Offset="0"/>
+                            <GradientStop Color="#F87171" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Производство" Foreground="#FEE2E2" FontWeight="SemiBold"/>
+                        <TextBlock x:Name="BatchesInProductionText" Grid.Row="1" Text="0" Style="{StaticResource KpiNumber}"/>
+                        <TextBlock Grid.Row="2" Text="Партий в производстве" Style="{StaticResource KpiLabel}"/>
+                    </Grid>
+                </Border>
+
+                <Border Style="{StaticResource KpiCard}"
+                        Tag="deviations"
+                        MouseLeftButtonUp="Card_Click">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#EA580C" Offset="0"/>
+                            <GradientStop Color="#FB923C" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Отклонения" Foreground="#FFEDD5" FontWeight="SemiBold"/>
+                        <TextBlock x:Name="BatchesWithDeviationsText" Grid.Row="1" Text="0" Style="{StaticResource KpiNumber}"/>
+                        <TextBlock Grid.Row="2" Text="Партий с отклонениями" Style="{StaticResource KpiLabel}"/>
+                    </Grid>
+                </Border>
+
+                <Border Style="{StaticResource KpiCard}"
+                        Tag="laboratory"
+                        MouseLeftButtonUp="Card_Click">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#0D9488" Offset="0"/>
+                            <GradientStop Color="#2DD4BF" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Лаборатория" Foreground="#CCFBF1" FontWeight="SemiBold"/>
+                        <TextBlock x:Name="BatchesWaitingForLabText" Grid.Row="1" Text="0" Style="{StaticResource KpiNumber}"/>
+                        <TextBlock Grid.Row="2" Text="Ожидают лабораторию" Style="{StaticResource KpiLabel}"/>
+                    </Grid>
+                </Border>
+            </WrapPanel>
+
+            <!-- Списки -->
+            <Grid Grid.Row="3"
+                  Margin="0,8,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="18"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="18"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Последние события -->
+                <Border Grid.Column="0" Style="{StaticResource CardBorder}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="12"/>
+                            <RowDefinition Height="320"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel>
+                            <TextBlock Text="Последние события" Style="{StaticResource SectionTitle}"/>
+                            <TextBlock Text="Журнал последних производственных событий"
+                                       Style="{StaticResource SmallMutedText}"
+                                       Margin="0,4,0,0"/>
+                        </StackPanel>
+
+                        <ListView x:Name="EventsListBox"
+          Grid.Row="2"
+          SelectionChanged="EventsListBox_SelectionChanged">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Background="White"
+                    BorderBrush="#E2E8F0"
+                    BorderThickness="0,0,0,1"
+                    Padding="8">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Ellipse Grid.Column="0"
+                             Width="9"
+                             Height="9"
+                             Fill="{Binding Severity, Converter={StaticResource SeverityToColorConverter}}"
+                             Margin="0,5,8,0"
+                             VerticalAlignment="Top"/>
+
+                                            <StackPanel Grid.Column="1">
+                                                <TextBlock Text="{Binding Description}"
+                                   FontSize="12"
+                                   FontWeight="SemiBold"
+                                   Foreground="#0F172A"
+                                   TextWrapping="Wrap"/>
+                                                <TextBlock Text="{Binding BatchNumber}"
+                                   FontSize="11"
+                                   Foreground="{StaticResource MutedTextBrush}"
+                                   Margin="0,3,0,0"/>
+                                            </StackPanel>
+
+                                            <!-- Изменено EventTime → Timestamp -->
+                                            <TextBlock Grid.Column="2"
+                               Text="{Binding Timestamp, StringFormat='HH:mm'}"
+                               FontSize="11"
+                               Foreground="{StaticResource MutedTextBrush}"
+                               Margin="8,0,0,0"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </Border>
+
+                <!-- Критические отклонения -->
+                <Border Grid.Column="2" Style="{StaticResource CardBorder}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="12"/>
+                            <RowDefinition Height="320"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel>
+                            <TextBlock Text="Критические отклонения"
+                                       Style="{StaticResource SectionTitle}"
+                                       Foreground="{StaticResource DangerBrush}"/>
+                            <TextBlock Text="Нерешённые производственные отклонения"
+                                       Style="{StaticResource SmallMutedText}"
+                                       Margin="0,4,0,0"/>
+                        </StackPanel>
+
+                        <ListView x:Name="CriticalDeviationsListBox"
+                                  Grid.Row="2"
+                                  SelectionChanged="CriticalDeviationsListBox_SelectionChanged">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Background="#FFF7F7"
+                                            BorderBrush="#FECACA"
+                                            BorderThickness="1"
+                                            CornerRadius="10"
+                                            Padding="10">
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding BatchNumber}"
+                                                       FontWeight="Bold"
+                                                       FontSize="13"
+                                                       Foreground="#991B1B"/>
+                                            <TextBlock Text="{Binding ParameterName}"
+                                                       FontSize="11"
+                                                       Foreground="#B91C1C"
+                                                       Margin="0,3,0,0"/>
+                                            <TextBlock Text="{Binding Description}"
+                                                       FontSize="12"
+                                                       Foreground="#475569"
+                                                       TextWrapping="Wrap"
+                                                       Margin="0,5,0,0"/>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </Border>
+
+                <!-- Партии на анализе -->
+                <Border Grid.Column="4" Style="{StaticResource CardBorder}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="12"/>
+                            <RowDefinition Height="320"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel>
+                            <TextBlock Text="Партии на анализе"
+                                       Style="{StaticResource SectionTitle}"
+                                       Foreground="#B45309"/>
+                            <TextBlock Text="Партии, ожидающие лабораторного решения"
+                                       Style="{StaticResource SmallMutedText}"
+                                       Margin="0,4,0,0"/>
+                        </StackPanel>
+
+                        <ListView x:Name="BatchesForAnalysisListBox"
+                                  Grid.Row="2"
+                                  SelectionChanged="BatchesForAnalysisListBox_SelectionChanged">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Background="#FFFBEB"
+                                            BorderBrush="#FDE68A"
+                                            BorderThickness="1"
+                                            CornerRadius="10"
+                                            Padding="10">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+                                            <TextBlock Grid.Row="0"
+                                                       Text="{Binding BatchNumber}"
+                                                       FontWeight="Bold"
+                                                       FontSize="13"
+                                                       Foreground="#92400E"/>
+                                            <TextBlock Grid.Row="1"
+                                                       Text="{Binding ProductName}"
+                                                       FontSize="12"
+                                                       Foreground="#475569"
+                                                       TextWrapping="Wrap"
+                                                       Margin="0,4,0,0"/>
+                                            <TextBlock Grid.Row="2"
+                                                       Text="{Binding LabStatus}"
+                                                       FontSize="11"
+                                                       Foreground="{StaticResource MutedTextBrush}"
+                                                       Margin="0,4,0,0"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

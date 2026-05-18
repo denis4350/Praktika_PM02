@@ -1,0 +1,481 @@
+﻿<Window x:Class="SZR_TechnologistApp.Views.BatchCardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converters="clr-namespace:SZR_TechnologistApp.Converters"
+        Title="Мониторинг партии"
+        Height="780"
+        Width="1050"
+        MinHeight="720"
+        MinWidth="980"
+        WindowStartupLocation="CenterOwner"
+        Background="#EEF2F7"
+        WindowStyle="SingleBorderWindow">
+
+    <Window.Resources>
+        <converters:StatusToVisibilityConverter x:Key="StatusToVisibilityConverter"/>
+
+        <SolidColorBrush x:Key="PrimaryBrush" Color="#2563EB"/>
+        <SolidColorBrush x:Key="PrimaryDarkBrush" Color="#1D4ED8"/>
+        <SolidColorBrush x:Key="SuccessBrush" Color="#16A34A"/>
+        <SolidColorBrush x:Key="SuccessDarkBrush" Color="#15803D"/>
+        <SolidColorBrush x:Key="DangerBrush" Color="#DC2626"/>
+        <SolidColorBrush x:Key="WarningBrush" Color="#F59E0B"/>
+        <SolidColorBrush x:Key="MutedTextBrush" Color="#64748B"/>
+        <SolidColorBrush x:Key="CardBorderBrush" Color="#DDE3EC"/>
+
+        <Style x:Key="CardBorder" TargetType="Border">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="CornerRadius" Value="14"/>
+            <Setter Property="Padding" Value="16"/>
+            <Setter Property="BorderBrush" Value="{StaticResource CardBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#9AA8BA"
+                                      BlurRadius="14"
+                                      ShadowDepth="2"
+                                      Opacity="0.16"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="LabelText" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource MutedTextBrush}"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="0,0,0,4"/>
+        </Style>
+
+        <Style x:Key="ValueText" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#0F172A"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+        </Style>
+
+        <Style x:Key="ActionButton" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="12,6"/>
+            <Setter Property="Margin" Value="6,0,0,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="MinWidth" Value="104"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="9"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource PrimaryDarkBrush}"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#CBD5E1"/>
+                    <Setter Property="Foreground" Value="#64748B"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="MiniStartButton" TargetType="Button" BasedOn="{StaticResource ActionButton}">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="MinWidth" Value="92"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="Margin" Value="0,0,0,4"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
+        </Style>
+
+        <Style x:Key="MiniCompleteButton" TargetType="Button" BasedOn="{StaticResource ActionButton}">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="MinWidth" Value="92"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Background" Value="{StaticResource SuccessBrush}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource SuccessDarkBrush}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="StatusBadgeText" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="10,4"/>
+            <Setter Property="Foreground" Value="#475569"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding status}" Value="Завершён">
+                    <Setter Property="Foreground" Value="#15803D"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding status}" Value="Завершен">
+                    <Setter Property="Foreground" Value="#15803D"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding status}" Value="Выполняется">
+                    <Setter Property="Foreground" Value="#B45309"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding status}" Value="Не начат">
+                    <Setter Property="Foreground" Value="#64748B"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="ListView">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="AlternationCount" Value="2"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        </Style>
+
+        <Style TargetType="ListViewItem">
+            <Setter Property="MinHeight" Value="62"/>
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Style.Triggers>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="#F8FAFC"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#EEF6FF"/>
+                </Trigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#DBEAFE"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="GridViewColumnHeader">
+            <Setter Property="Height" Value="38"/>
+            <Setter Property="Background" Value="#F1F5F9"/>
+            <Setter Property="Foreground" Value="#334155"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="10,0"/>
+            <Setter Property="BorderBrush" Value="#E2E8F0"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="18">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Верхняя панель -->
+        <Border Grid.Row="0"
+                CornerRadius="18"
+                Padding="20"
+                Margin="0,0,0,16">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#0F172A" Offset="0"/>
+                    <GradientStop Color="#1E3A8A" Offset="0.58"/>
+                    <GradientStop Color="#2563EB" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel>
+                    <TextBlock Text="Мониторинг партии"
+                               FontSize="24"
+                               FontWeight="Bold"
+                               Foreground="White"/>
+                    <TextBlock Text="Контроль технологических шагов, статуса выполнения и прогресса"
+                               FontSize="13"
+                               Foreground="#C7D2FE"
+                               Margin="0,5,0,0"/>
+                </StackPanel>
+
+                <Border Grid.Column="1"
+                        Background="#1E293B"
+                        CornerRadius="12"
+                        Padding="14,8"
+                        VerticalAlignment="Center"
+                        Opacity="0.92">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Партия"
+                                   Foreground="#CBD5E1"
+                                   FontSize="12"
+                                   FontWeight="SemiBold"
+                                   Margin="0,0,8,0"/>
+                        <TextBlock x:Name="BatchNumberBadge"
+                                   Text=""
+                                   Foreground="White"
+                                   FontSize="14"
+                                   FontWeight="Bold"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- Информация о партии -->
+        <Border Grid.Row="1"
+                Style="{StaticResource CardBorder}"
+                Margin="0,0,0,14">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.25*"/>
+                    <ColumnDefinition Width="1.6*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,18,0">
+                    <TextBlock Text="Номер партии" Style="{StaticResource LabelText}"/>
+                    <TextBlock x:Name="BatchNumberText" Style="{StaticResource ValueText}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="0,0,18,0">
+                    <TextBlock Text="Продукт" Style="{StaticResource LabelText}"/>
+                    <TextBlock x:Name="ProductNameText"
+                               Style="{StaticResource ValueText}"
+                               FontSize="15"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Margin="0,0,18,0">
+                    <TextBlock Text="Линия" Style="{StaticResource LabelText}"/>
+                    <TextBlock x:Name="LineText" Style="{StaticResource ValueText}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="3">
+                    <TextBlock Text="Статус / дата начала" Style="{StaticResource LabelText}"/>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock x:Name="StatusText"
+                                   FontSize="14"
+                                   FontWeight="Bold"/>
+                        <TextBlock x:Name="StartedAtText"
+                                   FontSize="12"
+                                   Foreground="{StaticResource MutedTextBrush}"
+                                   Margin="0,3,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Прогресс -->
+        <Border Grid.Row="2"
+                Style="{StaticResource CardBorder}"
+                Margin="0,0,0,14"
+                Padding="16">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0"
+                            Orientation="Vertical"
+                            Margin="0,0,16,0">
+                    <TextBlock Text="Прогресс"
+                               FontSize="12"
+                               Foreground="{StaticResource MutedTextBrush}"
+                               FontWeight="SemiBold"/>
+                    <TextBlock Text="Выполнение шагов"
+                               FontSize="15"
+                               FontWeight="Bold"
+                               Foreground="#0F172A"/>
+                </StackPanel>
+
+                <ProgressBar x:Name="ProgressBar"
+                             Grid.Column="1"
+                             Height="18"
+                             Minimum="0"
+                             Maximum="100"
+                             Value="0"
+                             VerticalAlignment="Center"
+                             Foreground="{StaticResource PrimaryBrush}"
+                             Background="#E2E8F0"/>
+
+                <Border Grid.Column="2"
+                        Background="#EFF6FF"
+                        CornerRadius="10"
+                        Padding="12,6"
+                        Margin="16,0,0,0"
+                        VerticalAlignment="Center">
+                    <TextBlock x:Name="ProgressPercentText"
+                               Text="0% (0/0)"
+                               FontSize="13"
+                               FontWeight="Bold"
+                               Foreground="{StaticResource PrimaryBrush}"/>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- Шаги -->
+        <Border Grid.Row="3"
+                Style="{StaticResource CardBorder}"
+                Padding="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0"
+                        Background="#F8FAFC"
+                        CornerRadius="14,14,0,0"
+                        Padding="16,14"
+                        BorderBrush="#E2E8F0"
+                        BorderThickness="0,0,0,1">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Технологические шаги"
+                                       FontSize="16"
+                                       FontWeight="Bold"
+                                       Foreground="#0F172A"/>
+                            <TextBlock Text="   запуск и завершение операций"
+                                       FontSize="12"
+                                       Foreground="{StaticResource MutedTextBrush}"
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <ListView x:Name="StepsListView"
+                          Grid.Row="1"
+                          MinHeight="360">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="№" Width="55">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border Background="#EEF2FF"
+                                                CornerRadius="8"
+                                                Width="34"
+                                                Height="28"
+                                                HorizontalAlignment="Center">
+                                            <TextBlock Text="{Binding stepNumber}"
+                                                       FontWeight="Bold"
+                                                       Foreground="{StaticResource PrimaryBrush}"
+                                                       HorizontalAlignment="Center"
+                                                       VerticalAlignment="Center"/>
+                                        </Border>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Название" Width="190">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding name}"
+                                                   FontWeight="SemiBold"
+                                                   Foreground="#0F172A"
+                                                   TextWrapping="Wrap"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Инструкция" Width="390">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding instruction}"
+                                                   Foreground="#475569"
+                                                   TextWrapping="Wrap"
+                                                   MaxHeight="44"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Статус" Width="130">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border CornerRadius="10"
+                                                Padding="2"
+                                                HorizontalAlignment="Center">
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="Background" Value="#F1F5F9"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding status}" Value="Завершён">
+                                                            <Setter Property="Background" Value="#DCFCE7"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding status}" Value="Завершен">
+                                                            <Setter Property="Background" Value="#DCFCE7"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding status}" Value="Выполняется">
+                                                            <Setter Property="Background" Value="#FEF3C7"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding status}" Value="Не начат">
+                                                            <Setter Property="Background" Value="#E2E8F0"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+
+                                            <TextBlock Text="{Binding status}"
+                                                       Style="{StaticResource StatusBadgeText}"/>
+                                        </Border>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Действия" Width="130">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Vertical"
+                                                    VerticalAlignment="Center"
+                                                    HorizontalAlignment="Center">
+                                            <Button Content="Начать"
+                                                    Style="{StaticResource MiniStartButton}"
+                                                    Click="StartStep_Click"
+                                                    Visibility="{Binding status, Converter={StaticResource StatusToVisibilityConverter}, ConverterParameter=Не начат}"/>
+
+                                            <Button Content="Завершить"
+                                                    Style="{StaticResource MiniCompleteButton}"
+                                                    Click="CompleteStep_Click"
+                                                    Visibility="{Binding status, Converter={StaticResource StatusToVisibilityConverter}, ConverterParameter=Выполняется}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </Border>
+
+        <!-- Нижние кнопки -->
+        <Border Grid.Row="4"
+                Background="Transparent"
+                Margin="0,16,0,0">
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <Button x:Name="RefreshButton"
+                        Content="Обновить"
+                        Style="{StaticResource ActionButton}"
+                        Click="RefreshButton_Click"/>
+
+                <Button x:Name="CloseButton"
+                        Content="Закрыть"
+                        Style="{StaticResource ActionButton}"
+                        Background="#475569"
+                        Click="CloseButton_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

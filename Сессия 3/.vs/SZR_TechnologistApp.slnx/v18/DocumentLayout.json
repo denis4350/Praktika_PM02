@@ -1,0 +1,877 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|c:\\users\\korya\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\college\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u043F\u043C02\\\u0441\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\productcardwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\productcardwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\techcardcardwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\techcardcardwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\recipecardwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\recipecardwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45AE20AA-861A-499C-B006-7908E3300766}|SZR_TechnologistApp.Tests\\SZR_TechnologistApp.Tests.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45AE20AA-861A-499C-B006-7908E3300766}|SZR_TechnologistApp.Tests\\SZR_TechnologistApp.Tests.csproj|solutionrelative:szr_technologistapp.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\batchcardwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\batchcardwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\dashboardview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\dashboardview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\batchcardwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\batchcardwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\newextruderprogramdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\newextruderprogramdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\techcardform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\techcardform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\orderform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\orderform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\recipeform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\recipeform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\componentdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\componentdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\componentdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\componentdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\productform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\productform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\productform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\productform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\models\\apimodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\models\\apimodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\dashboardview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\dashboardview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\profilewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\profilewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\profilewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\profilewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\completestepdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\completestepdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\completestepdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\completestepdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\techcardcardwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\techcardcardwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\orderform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\orderform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\techstepdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\techstepdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\techstepdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\techstepdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\techcardform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\techcardform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\reportwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\reportwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\reportwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\reportwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\newextruderprogramdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\newextruderprogramdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\extruderzoneswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\extruderzoneswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\extruderview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\extruderview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\extruderview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\extruderview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\extruderzoneswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\extruderzoneswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\changepasswordwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\changepasswordwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\changepasswordwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\changepasswordwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\recipeform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\recipeform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\productcardwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\productcardwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\views\\recipecardwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\views\\recipecardwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\helpers\\captchahelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\helpers\\captchahelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\models\\stepexecution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\models\\stepexecution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\converters\\statustovisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\converters\\statustovisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\converters\\startbuttonvisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\converters\\startbuttonvisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\converters\\severitytocolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\converters\\severitytocolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\converters\\completebuttonvisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\converters\\completebuttonvisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\converters\\booltoyesnoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\converters\\booltoyesnoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\app_start\\swaggerconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\app_start\\swaggerconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\szr_technologistapp\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{6A31BD47-A87A-4960-B5C1-CD649D1179AF}|SZR_TechnologistApp\\SZR_TechnologistApp.csproj|solutionrelative:szr_technologistapp\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "DashboardView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\DashboardView.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\DashboardView.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\DashboardView.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\DashboardView.xaml.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAAApwJ4AAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T10:58:44.12Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BatchCardWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\BatchCardWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\BatchCardWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\BatchCardWindow.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\BatchCardWindow.xaml.cs",
+              "ViewState": "AgIAAIsAAAAAAAAAAAAAwKgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T11:28:43.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\MainWindow.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAN0BAAAAAAAAAAAuwAQCAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T09:31:39.219Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductCardWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ProductCardWindow.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\ProductCardWindow.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ProductCardWindow.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\ProductCardWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-16T12:00:27.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RecipeCardWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\RecipeCardWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\RecipeCardWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\RecipeCardWindow.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\RecipeCardWindow.xaml.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAuwJsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T06:21:35.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\LoginWindow.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\LoginWindow.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\LoginWindow.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\LoginWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-14T09:26:01.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TechCardCardWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\TechCardCardWindow.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\TechCardCardWindow.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\TechCardCardWindow.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\TechCardCardWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-16T11:39:28.181Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "NewExtruderProgramDialog.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\NewExtruderProgramDialog.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\NewExtruderProgramDialog.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\NewExtruderProgramDialog.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\NewExtruderProgramDialog.xaml.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAASwDkAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T11:56:14.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ProductForm.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ProductForm.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\ProductForm.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ProductForm.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\ProductForm.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-16T11:39:18.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "CompleteStepDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\CompleteStepDialog.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\CompleteStepDialog.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\CompleteStepDialog.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\CompleteStepDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-16T11:35:21.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "TechCardCardWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\TechCardCardWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\TechCardCardWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\TechCardCardWindow.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\TechCardCardWindow.xaml.cs",
+              "ViewState": "AgIAACICAAAAAAAAAAAuwEUCAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T11:51:02.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ProfileWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ProfileWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\ProfileWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ProfileWindow.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\ProfileWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T12:07:35.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CompleteStepDialog.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\CompleteStepDialog.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\CompleteStepDialog.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\CompleteStepDialog.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\CompleteStepDialog.xaml.cs",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAqwKkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T11:41:52.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp.Tests\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp.Tests\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp.Tests\\UnitTest1.cs",
+              "RelativeToolTip": "SZR_TechnologistApp.Tests\\UnitTest1.cs",
+              "ViewState": "AgIAAFoDAAAAAAAAAAAAwHADAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T13:28:02.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\MainWindow.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-14T09:52:07.981Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TechCardForm.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\TechCardForm.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\TechCardForm.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\TechCardForm.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\TechCardForm.xaml.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAASwFUAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T12:18:09.946Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DashboardView.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\DashboardView.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\DashboardView.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\DashboardView.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\DashboardView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-16T11:14:23.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BatchCardWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\BatchCardWindow.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\BatchCardWindow.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\BatchCardWindow.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\BatchCardWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-16T11:28:34.842Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ApiService.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Services\\ApiService.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Services\\ApiService.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Services\\ApiService.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Services\\ApiService.cs",
+              "ViewState": "AgIAANQAAAAAAAAAAAAowOcAAACIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T09:36:58.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "RecipeForm.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\RecipeForm.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\RecipeForm.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\RecipeForm.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\RecipeForm.xaml.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAASwFUAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T12:12:38.026Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "OrderForm.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\OrderForm.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\OrderForm.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\OrderForm.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\OrderForm.xaml.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAhwFQAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T11:59:00.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ComponentDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ComponentDialog.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\ComponentDialog.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ComponentDialog.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\ComponentDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-16T05:39:16.596Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ProfileWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ProfileWindow.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\ProfileWindow.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ProfileWindow.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\ProfileWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-16T11:39:20.656Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ApiModels.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Models\\ApiModels.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Models\\ApiModels.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Models\\ApiModels.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Models\\ApiModels.cs",
+              "ViewState": "AgIAABACAAAAAAAAAAAAACwCAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-17T12:12:37.677Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ComponentDialog.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ComponentDialog.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\ComponentDialog.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ComponentDialog.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\ComponentDialog.xaml.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T11:42:41.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "LoginWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\LoginWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\LoginWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\LoginWindow.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\LoginWindow.xaml.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T10:06:30.738Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ProductForm.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ProductForm.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\ProductForm.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ProductForm.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\ProductForm.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T12:03:52.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "OrderForm.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\OrderForm.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\OrderForm.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\OrderForm.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\OrderForm.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-16T11:39:15.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "TechStepDialog.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\TechStepDialog.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\TechStepDialog.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\TechStepDialog.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\TechStepDialog.xaml.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAQwFsAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T12:44:11.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "TechStepDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\TechStepDialog.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\TechStepDialog.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\TechStepDialog.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\TechStepDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-16T11:39:31.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "TechCardForm.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\TechCardForm.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\TechCardForm.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\TechCardForm.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\TechCardForm.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-16T11:39:30.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ReportWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ReportWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\ReportWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ReportWindow.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\ReportWindow.xaml.cs",
+              "ViewState": "AgIAAKkAAAAAAAAAAIAwwMkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T06:29:23.891Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ReportWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ReportWindow.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\ReportWindow.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ReportWindow.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\ReportWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-16T11:39:26.694Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "RecipeCardWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\RecipeCardWindow.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\RecipeCardWindow.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\RecipeCardWindow.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\RecipeCardWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-16T11:39:22.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "NewExtruderProgramDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\NewExtruderProgramDialog.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\NewExtruderProgramDialog.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\NewExtruderProgramDialog.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\NewExtruderProgramDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-16T11:28:19.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "SeverityToColorConverter.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Converters\\SeverityToColorConverter.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Converters\\SeverityToColorConverter.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Converters\\SeverityToColorConverter.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Converters\\SeverityToColorConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T18:46:38.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "CompleteButtonVisibilityConverter.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Converters\\CompleteButtonVisibilityConverter.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Converters\\CompleteButtonVisibilityConverter.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Converters\\CompleteButtonVisibilityConverter.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Converters\\CompleteButtonVisibilityConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T18:46:30.593Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "BoolToYesNoConverter.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Converters\\BoolToYesNoConverter.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Converters\\BoolToYesNoConverter.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Converters\\BoolToYesNoConverter.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Converters\\BoolToYesNoConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T11:17:08.092Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "CaptchaHelper.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Helpers\\CaptchaHelper.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Helpers\\CaptchaHelper.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Helpers\\CaptchaHelper.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Helpers\\CaptchaHelper.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAqwJAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T18:52:37.395Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "ProductCardWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ProductCardWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\ProductCardWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ProductCardWindow.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\ProductCardWindow.xaml.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAiwHIAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T06:29:19.422Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ExtruderZonesWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ExtruderZonesWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\ExtruderZonesWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ExtruderZonesWindow.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\ExtruderZonesWindow.xaml.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T11:27:49.332Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ExtruderView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ExtruderView.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\ExtruderView.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ExtruderView.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\ExtruderView.xaml.cs",
+              "ViewState": "AgIAALABAAAAAAAAAAAiwBECAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T11:21:18.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\App.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\App.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T21:31:20.297Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\App.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\App.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\App.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-16T21:32:38.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "packages.config",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\packages.config",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\packages.config",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\packages.config",
+              "RelativeToolTip": "SZR_TechnologistApp\\packages.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-05-16T21:01:33.936Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "ExtruderView.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ExtruderView.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\ExtruderView.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ExtruderView.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\ExtruderView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-16T11:21:30.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ExtruderZonesWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ExtruderZonesWindow.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\ExtruderZonesWindow.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ExtruderZonesWindow.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\ExtruderZonesWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-16T11:27:35.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "ChangePasswordWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ChangePasswordWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\ChangePasswordWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ChangePasswordWindow.xaml.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\ChangePasswordWindow.xaml.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAQwGcAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T11:33:08.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "ChangePasswordWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ChangePasswordWindow.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\ChangePasswordWindow.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\ChangePasswordWindow.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\ChangePasswordWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-16T11:32:52.178Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "RecipeForm.xaml",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\RecipeForm.xaml",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Views\\RecipeForm.xaml",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Views\\RecipeForm.xaml",
+              "RelativeToolTip": "SZR_TechnologistApp\\Views\\RecipeForm.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-16T11:39:25.217Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "SwaggerConfig.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\App_Start\\SwaggerConfig.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\App_Start\\SwaggerConfig.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\App_Start\\SwaggerConfig.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\App_Start\\SwaggerConfig.cs",
+              "ViewState": "AgIAANQAAAAAAAAAAAAgwP8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-17T11:59:54.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "StepExecution.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Models\\StepExecution.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Models\\StepExecution.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Models\\StepExecution.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Models\\StepExecution.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T09:51:54.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "StatusToVisibilityConverter.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Converters\\StatusToVisibilityConverter.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Converters\\StatusToVisibilityConverter.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Converters\\StatusToVisibilityConverter.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Converters\\StatusToVisibilityConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwCkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T18:46:51.782Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "StartButtonVisibilityConverter.cs",
+              "DocumentMoniker": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Converters\\StartButtonVisibilityConverter.cs",
+              "RelativeDocumentMoniker": "SZR_TechnologistApp\\Converters\\StartButtonVisibilityConverter.cs",
+              "ToolTip": "C:\\Users\\korya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\COLLEGE\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u041C02\\\u0421\u0435\u0441\u0441\u0438\u044F 3\\SZR_TechnologistApp\\Converters\\StartButtonVisibilityConverter.cs",
+              "RelativeToolTip": "SZR_TechnologistApp\\Converters\\StartButtonVisibilityConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T18:46:45.866Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="SZR_OperatorApp.Tests/SZR_OperatorApp.Tests.csproj" Id="a42cd171-4f64-4246-9b54-fc88cfc7c042" />
+  <Project Path="SZR_OperatorApp/SZR_OperatorApp.csproj" Id="b22fc2d0-d47e-422b-a06e-301884d1dac2" />
+</Solution>

@@ -1,0 +1,11 @@
+[
+  {
+    "Name": "Новый профиль",
+    "Projects": [
+      {
+        "Path": "SZR_Production_API.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

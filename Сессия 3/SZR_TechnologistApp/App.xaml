@@ -1,0 +1,12 @@
+﻿<Application x:Class="SZR_TechnologistApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:SZR_TechnologistApp.Converters">
+
+    <Application.Resources>
+        <BitmapImage x:Key="AppLogo" UriSource="/Resources/logo.png"/>
+        <converters:SeverityToColorConverter x:Key="SeverityToColorConverter"/>
+        <converters:StatusToVisibilityConverter x:Key="StatusToVisibilityConverter"/>
+        <converters:BoolToYesNoConverter x:Key="BoolToYesNoConverter"/>
+    </Application.Resources>
+</Application>

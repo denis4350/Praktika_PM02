@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="SZR_TechnologistApp.Tests/SZR_TechnologistApp.Tests.csproj" Id="45ae20aa-861a-499c-b006-7908e3300766" />
+  <Project Path="SZR_TechnologistApp/SZR_TechnologistApp.csproj" Id="6a31bd47-a87a-4960-b5c1-cd649d1179af" />
+</Solution>

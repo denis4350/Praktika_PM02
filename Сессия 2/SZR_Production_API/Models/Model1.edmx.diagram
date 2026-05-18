@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c5bb51f70c9a4642945ece46a57afe89" Name="Diagram1">
+        <EntityTypeShape EntityType="SZR_ProductionModel.AuditLogs" Width="1.5" PointX="5.25" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.BatchMaterials" Width="1.5" PointX="15.5" PointY="40.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.BatchStepExecutions" Width="1.5" PointX="5.25" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.DeviationEvents" Width="1.5" PointX="12.75" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.Equipment" Width="1.5" PointX="3" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.EquipmentLogs" Width="1.5" PointX="12.75" PointY="46.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.ExtruderLogs" Width="1.5" PointX="9.75" PointY="43.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.ExtruderPrograms" Width="1.5" PointX="7.5" PointY="57" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.ExtruderTelemetry" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.ExtruderZones" Width="1.5" PointX="9.75" PointY="56.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.LabTestParameters" Width="1.5" PointX="7.5" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.LabTests" Width="1.5" PointX="5.25" PointY="34.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.MaintenanceRecords" Width="1.5" PointX="8.25" PointY="30.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.Notifications" Width="1.5" PointX="5.25" PointY="42.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.ProductionBatches" Width="1.5" PointX="7.5" PointY="42.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.ProductionOrders" Width="1.5" PointX="10.5" PointY="47.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.Products" Width="1.5" PointX="5.25" PointY="56.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.RawMaterialBatches" Width="1.5" PointX="10.25" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.RawMaterials" Width="1.5" PointX="8" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.RecipeComponents" Width="1.5" PointX="15.75" PointY="43.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.Recipes" Width="1.5" PointX="12.5" PointY="42.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.RefreshTokens" Width="1.5" PointX="5.25" PointY="65.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.Roles" Width="1.5" PointX="0.75" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.StatusHistory" Width="1.5" PointX="5.25" PointY="69" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.TechCards" Width="1.5" PointX="7.5" PointY="49.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.TechSteps" Width="1.5" PointX="9.75" PointY="52.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.Users" Width="1.5" PointX="3" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.vw_ActiveBatches" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SZR_ProductionModel.vw_RecipeComponentsSum" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_Audit_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_BatchMaterials_BatchId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_BatchMaterials_RMBatchId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_BatchStepExecutions_Equipment" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_Dev_StepExecId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_StepExec_BatchId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_StepExec_FinishedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_StepExec_StartedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_StepExec_StepId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_Dev_BatchId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_Dev_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_Dev_ResolvedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_DeviationEvents_Equipment" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_EquipmentLogs_Equipment" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_MaintenanceRecords_Equipment" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_ProductionBatches_Equipment" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_TechSteps_Equipment" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_EquipmentLogs_ProductionBatches" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_ExtruderLogs_Batch" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_ExtruderLogs_Program" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_ExtruderLogs_User" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_ExtruderPrograms_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_ExtruderZones_Program" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_LabParams_TestId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_LabTests_AssignedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_LabTests_ExecutedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_MaintenanceRecords_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_Notif_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_Batches_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_Batches_OrderId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_Batches_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_Batches_RecipeId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_Batches_TechCardId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_Orders_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_Orders_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_Products_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_Recipes_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_TechCards_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_RMBatches_DecisionBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_RMBatches_MaterialId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_RecipeComponents_RawMaterialId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_RecipeComponents_RecipeId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_Recipes_ApprovedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_Recipes_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_RefreshTokens_User" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_Users_RoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_StatusHistory_User" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_TechCards_ApprovedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_TechCards_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SZR_ProductionModel.FK_TechSteps_TechCardId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

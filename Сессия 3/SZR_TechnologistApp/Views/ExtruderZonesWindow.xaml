@@ -1,0 +1,394 @@
+﻿<Window x:Class="SZR_TechnologistApp.Views.ExtruderZonesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Зоны экструдера"
+        Height="614"
+        Width="1050"
+        MinHeight="580"
+        MinWidth="980"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="CanResize"
+        Background="#EEF2F7"
+        KeyDown="Window_KeyDown">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="PrimaryBrush" Color="#2563EB"/>
+        <SolidColorBrush x:Key="PrimaryDarkBrush" Color="#1D4ED8"/>
+        <SolidColorBrush x:Key="SuccessBrush" Color="#16A34A"/>
+        <SolidColorBrush x:Key="WarningBrush" Color="#F59E0B"/>
+        <SolidColorBrush x:Key="MutedTextBrush" Color="#64748B"/>
+        <SolidColorBrush x:Key="CardBorderBrush" Color="#DDE3EC"/>
+
+        <Style x:Key="CardBorder" TargetType="Border">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="CornerRadius" Value="16"/>
+            <Setter Property="Padding" Value="16"/>
+            <Setter Property="BorderBrush" Value="{StaticResource CardBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#9AA8BA"
+                                      BlurRadius="14"
+                                      ShadowDepth="2"
+                                      Opacity="0.14"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="LabelText" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource MutedTextBrush}"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="0,0,0,4"/>
+        </Style>
+
+        <Style x:Key="ValueText" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#0F172A"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+        </Style>
+
+        <Style x:Key="PrimaryButton" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Height" Value="38"/>
+            <Setter Property="MinWidth" Value="112"/>
+            <Setter Property="Padding" Value="14,7"/>
+            <Setter Property="Margin" Value="8,0,0,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="10"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource PrimaryDarkBrush}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="ListView">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="AlternationCount" Value="2"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+        </Style>
+
+        <Style TargetType="ListViewItem">
+            <Setter Property="MinHeight" Value="58"/>
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Style.Triggers>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="#F8FAFC"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#EEF6FF"/>
+                </Trigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#DBEAFE"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="GridViewColumnHeader">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Background" Value="#F1F5F9"/>
+            <Setter Property="Foreground" Value="#334155"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="10,0"/>
+            <Setter Property="BorderBrush" Value="#E2E8F0"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="22">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <Border Grid.Row="0"
+                CornerRadius="18"
+                Padding="22"
+                Margin="0,0,0,16">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#0F172A" Offset="0"/>
+                    <GradientStop Color="#1E3A8A" Offset="0.58"/>
+                    <GradientStop Color="#2563EB" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel>
+                    <TextBlock Text="Зоны экструдера"
+                               FontSize="26"
+                               FontWeight="Bold"
+                               Foreground="White"/>
+                    <TextBlock x:Name="HeaderSubtitleText"
+                               Text="Параметры температурных и технологических зон"
+                               FontSize="13"
+                               Foreground="#C7D2FE"
+                               Margin="0,6,0,0"/>
+                </StackPanel>
+
+                <Border Grid.Column="1"
+                        Background="#1E293B"
+                        CornerRadius="12"
+                        Padding="14,8"
+                        Opacity="0.92"
+                        VerticalAlignment="Center">
+                    <StackPanel>
+                        <TextBlock Text="Всего зон"
+                                   FontSize="11"
+                                   Foreground="#CBD5E1"
+                                   HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="ZonesCountText"
+                                   Text="0"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- Информация о программе -->
+        <Border Grid.Row="1"
+                Style="{StaticResource CardBorder}"
+                Margin="0,0,0,16">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.4*"/>
+                    <ColumnDefinition Width="1.3*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,18,0">
+                    <TextBlock Text="Программа" Style="{StaticResource LabelText}"/>
+                    <TextBlock x:Name="ProgramNameText" Style="{StaticResource ValueText}" FontSize="15"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="0,0,18,0">
+                    <TextBlock Text="Продукт" Style="{StaticResource LabelText}"/>
+                    <TextBlock x:Name="ProductNameText" Style="{StaticResource ValueText}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Margin="0,0,18,0">
+                    <TextBlock Text="Статус" Style="{StaticResource LabelText}"/>
+                    <Border x:Name="StatusBadge"
+                            Background="#E2E8F0"
+                            CornerRadius="10"
+                            Padding="10,4"
+                            HorizontalAlignment="Left">
+                        <TextBlock x:Name="StatusText"
+                                   Text="—"
+                                   FontSize="12"
+                                   FontWeight="Bold"
+                                   Foreground="#475569"/>
+                    </Border>
+                </StackPanel>
+
+                <StackPanel Grid.Column="3">
+                    <TextBlock Text="Дата создания" Style="{StaticResource LabelText}"/>
+                    <TextBlock x:Name="CreatedAtText" Style="{StaticResource ValueText}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Список зон -->
+        <Border Grid.Row="2"
+                Style="{StaticResource CardBorder}"
+                Padding="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0"
+                        Background="#F8FAFC"
+                        CornerRadius="16,16,0,0"
+                        Padding="16,14"
+                        BorderBrush="#E2E8F0"
+                        BorderThickness="0,0,0,1">
+                    <StackPanel>
+                        <TextBlock Text="Параметры зон"
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="#0F172A"/>
+                        <TextBlock Text="Уставки, допустимые диапазоны и параметры подачи"
+                                   FontSize="12"
+                                   Foreground="{StaticResource MutedTextBrush}"
+                                   Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <ListView x:Name="ZonesListView"
+                          Grid.Row="1"
+                          MinHeight="330">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Зона" Width="70">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border Background="#EEF2FF"
+                                                CornerRadius="8"
+                                                Width="42"
+                                                Height="28"
+                                                HorizontalAlignment="Center">
+                                            <TextBlock Text="{Binding ZoneNumber}"
+                                                       FontWeight="Bold"
+                                                       Foreground="{StaticResource PrimaryBrush}"
+                                                       HorizontalAlignment="Center"
+                                                       VerticalAlignment="Center"/>
+                                        </Border>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Название" Width="140">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding ZoneName}"
+                                                   FontWeight="SemiBold"
+                                                   Foreground="#0F172A"
+                                                   TextWrapping="Wrap"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Температура" Width="180">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock FontWeight="Bold" Foreground="#0F172A">
+                                                <Run Text="{Binding TemperatureSetpoint}"/>
+                                                <Run Text=" °C"/>
+                                            </TextBlock>
+                                            <TextBlock FontSize="11" Foreground="{StaticResource MutedTextBrush}">
+                                                <Run Text="min "/>
+                                                <Run Text="{Binding TemperatureMin}"/>
+                                                <Run Text=" / max "/>
+                                                <Run Text="{Binding TemperatureMax}"/>
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Давление" Width="170">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock FontWeight="Bold" Foreground="#0F172A">
+                                                <Run Text="{Binding PressureSetpoint}"/>
+                                                <Run Text=" бар"/>
+                                            </TextBlock>
+                                            <TextBlock FontSize="11" Foreground="{StaticResource MutedTextBrush}">
+                                                <Run Text="min "/>
+                                                <Run Text="{Binding PressureMin}"/>
+                                                <Run Text=" / max "/>
+                                                <Run Text="{Binding PressureMax}"/>
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Шнек" Width="110">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock FontWeight="SemiBold" Foreground="#334155">
+                                            <Run Text="{Binding ScrewSpeed}"/>
+                                            <Run Text=" об/мин"/>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Подача" Width="110">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock FontWeight="SemiBold" Foreground="#334155">
+                                            <Run Text="{Binding FeedRate}"/>
+                                            <Run Text=" кг/ч"/>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Контроль" Width="180">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock Text="Темп. и давление заданы"
+                                                       FontSize="12"
+                                                       FontWeight="SemiBold"
+                                                       Foreground="{StaticResource SuccessBrush}"/>
+                                            <TextBlock Text="Проверить перед запуском"
+                                                       FontSize="11"
+                                                       Foreground="{StaticResource MutedTextBrush}"
+                                                       Margin="0,3,0,0"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </Border>
+
+        <!-- Нижняя панель -->
+        <Border Grid.Row="3"
+                Background="#E2E8F0"
+                CornerRadius="10"
+                Padding="12"
+                Margin="0,14,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock x:Name="FooterText"
+                           Text="Просмотр параметров программы экструдера"
+                           Foreground="#475569"
+                           FontSize="12"
+                           VerticalAlignment="Center"/>
+
+                <Button Grid.Column="1"
+                        Content="Закрыть"
+                        Style="{StaticResource PrimaryButton}"
+                        Click="Close_Click"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

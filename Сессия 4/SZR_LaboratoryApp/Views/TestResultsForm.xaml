@@ -1,0 +1,194 @@
+﻿<Window x:Class="SZR_LaboratoryApp.Views.TestResultsForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converters="clr-namespace:SZR_LaboratoryApp.Converters"
+        Title="Результаты испытания" Height="700" Width="850"
+        WindowStartupLocation="CenterOwner" WindowStyle="SingleBorderWindow">
+
+    <Window.Resources>
+        <converters:StatusToColorConverter x:Key="StatusToColorConverter"/>
+        <converters:BoolToYesNoConverter x:Key="BoolToYesNoConverter"/>
+        <converters:BoolToStatusConverter x:Key="BoolToStatusConverter"/>
+        <converters:BoolToColorConverter x:Key="BoolToColorConverter"/>
+
+        <Style x:Key="ActionButton" TargetType="Button">
+            <Setter Property="Background" Value="#2E75B6"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="12,8"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#1E5A8A"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="SuccessButton" TargetType="Button">
+            <Setter Property="Background" Value="#28A745"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="12,8"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#1E7E34"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="8,0"/>
+            <Setter Property="BorderBrush" Value="#D3D3D3"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <Border Grid.Row="0" Background="#2C3E50" CornerRadius="8" Padding="12" Margin="0,0,0,15">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="🔬" FontSize="20" Margin="0,0,10,0"/>
+                <TextBlock Text="Результаты лабораторного испытания" FontSize="16" FontWeight="Bold" Foreground="White"/>
+                <TextBlock x:Name="TestNumberText" Text="" FontSize="12" Foreground="#BDC3C7" Margin="15,0,0,0" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Информация об испытании -->
+        <Border Grid.Row="1" Background="#F0F8FF" CornerRadius="8" Padding="12" Margin="0,0,0,15" BorderBrush="#ADD8E6" BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Партия:" FontWeight="Bold" Margin="5" VerticalAlignment="Center"/>
+                <TextBlock x:Name="BatchNumberText" Grid.Row="0" Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="Тип:" FontWeight="Bold" Margin="5" VerticalAlignment="Center"/>
+                <TextBlock x:Name="BatchTypeText" Grid.Row="0" Grid.Column="3" Margin="5" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Наименование:" FontWeight="Bold" Margin="5" VerticalAlignment="Center"/>
+                <TextBlock x:Name="MaterialNameText" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="5" VerticalAlignment="Center" FontWeight="Bold"/>
+
+                <!-- Поля для сырья -->
+                <TextBlock x:Name="SupplierLabel" Grid.Row="2" Grid.Column="0" Text="Поставщик:" FontWeight="Bold" Margin="5" VerticalAlignment="Center" Visibility="Collapsed"/>
+                <TextBlock x:Name="SupplierText" Grid.Row="2" Grid.Column="1" Margin="5" VerticalAlignment="Center" Visibility="Collapsed"/>
+
+                <TextBlock x:Name="QuantityLabel" Grid.Row="2" Grid.Column="2" Text="Количество:" FontWeight="Bold" Margin="5" VerticalAlignment="Center" Visibility="Collapsed"/>
+                <TextBlock x:Name="QuantityText" Grid.Row="2" Grid.Column="3" Margin="5" VerticalAlignment="Center" Visibility="Collapsed"/>
+
+                <TextBlock x:Name="ArrivalDateLabel" Grid.Row="3" Grid.Column="0" Text="Дата поступления:" FontWeight="Bold" Margin="5" VerticalAlignment="Center" Visibility="Collapsed"/>
+                <TextBlock x:Name="ArrivalDateText" Grid.Row="3" Grid.Column="1" Margin="5" VerticalAlignment="Center" Visibility="Collapsed"/>
+
+                <!-- Поля для продукции -->
+                <TextBlock x:Name="LineLabel" Grid.Row="2" Grid.Column="0" Text="Линия:" FontWeight="Bold" Margin="5" VerticalAlignment="Center" Visibility="Collapsed"/>
+                <TextBlock x:Name="LineText" Grid.Row="2" Grid.Column="1" Margin="5" VerticalAlignment="Center" Visibility="Collapsed"/>
+
+                <TextBlock x:Name="StatusLabel" Grid.Row="2" Grid.Column="2" Text="Статус:" FontWeight="Bold" Margin="5" VerticalAlignment="Center" Visibility="Collapsed"/>
+                <TextBlock x:Name="StatusText" Grid.Row="2" Grid.Column="3" Margin="5" VerticalAlignment="Center" Visibility="Collapsed"/>
+
+                <TextBlock x:Name="FinishedAtLabel" Grid.Row="3" Grid.Column="2" Text="Дата завершения:" FontWeight="Bold" Margin="5" VerticalAlignment="Center" Visibility="Collapsed"/>
+                <TextBlock x:Name="FinishedAtText" Grid.Row="3" Grid.Column="3" Margin="5" VerticalAlignment="Center" Visibility="Collapsed"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Тип испытания:" FontWeight="Bold" Margin="5" VerticalAlignment="Center" Visibility="Collapsed"/>
+                <TextBlock x:Name="TestTypeText" Grid.Row="3" Grid.Column="1" Margin="5" VerticalAlignment="Center" Visibility="Collapsed"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="2" Text="Приоритет:" FontWeight="Bold" Margin="5" VerticalAlignment="Center" Visibility="Collapsed"/>
+                <TextBlock x:Name="PriorityText" Grid.Row="3" Grid.Column="3" Margin="5" VerticalAlignment="Center" Visibility="Collapsed"/>
+            </Grid>
+        </Border>
+
+        <!-- Таблица параметров -->
+        <Border Grid.Row="2" Background="White" CornerRadius="8" Padding="12" Margin="0,0,0,15" BorderBrush="#E0E0E0" BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="📊 Контролируемые параметры" FontSize="14" FontWeight="Bold" Margin="0,0,0,10"/>
+
+                <DataGrid x:Name="ParametersGrid" Grid.Row="1" AutoGenerateColumns="False" 
+                          CanUserAddRows="False" CanUserDeleteRows="False" MinHeight="200">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Параметр" Binding="{Binding parameterName}" Width="150" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Норма мин" Binding="{Binding normMin}" Width="80" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Норма макс" Binding="{Binding normMax}" Width="80" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Ед.изм" Binding="{Binding unit}" Width="70" IsReadOnly="True"/>
+                        <DataGridTemplateColumn Header="Факт. значение" Width="120">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox Text="{Binding ActualValue, UpdateSourceTrigger=PropertyChanged, 
+                                               TargetNullValue='', StringFormat='{}{0:0.00}'}" 
+                                             Width="100" Height="28"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Результат" Width="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding IsPassed, Converter={StaticResource BoolToStatusConverter}}"
+                                               Foreground="{Binding IsPassed, Converter={StaticResource BoolToColorConverter}}"
+                                               FontWeight="Bold" HorizontalAlignment="Center"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Border>
+
+        <!-- Общий результат -->
+        <Border Grid.Row="3" Background="#FFF8E1" CornerRadius="8" Padding="12" Margin="0,0,0,15" BorderBrush="#FFE082" BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Результат:" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock x:Name="OverallResultText" Grid.Row="0" Grid.Column="1" FontSize="16" FontWeight="Bold"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Комментарий:" FontWeight="Bold" VerticalAlignment="Center" Margin="0,10,0,0"/>
+                <TextBox x:Name="CommentBox" Grid.Row="1" Grid.Column="1" Height="50" Margin="0,10,0,0" 
+                         TextWrapping="Wrap" AcceptsReturn="True" IsReadOnly="True"/>
+            </Grid>
+        </Border>
+
+        <!-- Кнопки -->
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,5,0,0">
+            <Button x:Name="SaveResultsButton" Content="💾 Сохранить результаты" Width="150" Height="35" Style="{StaticResource ActionButton}" Click="SaveButton_Click"/>
+            <Button x:Name="ExportPdfButton" Content="📄 Экспорт в PDF" Width="120" Height="35" 
+                    Background="#FF9800" Foreground="White" Cursor="Hand" Margin="5,0" Click="ExportPdfButton_Click"/>
+            <Button x:Name="CompleteButton" Content="✅ Завершить испытание" Width="160" Height="35" Style="{StaticResource SuccessButton}" Click="CompleteButton_Click"/>
+            <Button x:Name="CloseButton" Content="✖ Закрыть" Width="100" Height="35" Style="{StaticResource ActionButton}" Click="CloseButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

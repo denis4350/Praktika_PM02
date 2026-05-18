@@ -1,0 +1,573 @@
+﻿<Window x:Class="SZR_TechnologistApp.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Система управления производством СЗР - Модуль технолога"
+        Height="768"
+        Width="1366"
+        MinHeight="720"
+        MinWidth="1180"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        Background="#EEF2F7">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="PrimaryBrush" Color="#2563EB"/>
+        <SolidColorBrush x:Key="PrimaryDarkBrush" Color="#1D4ED8"/>
+        <SolidColorBrush x:Key="SuccessBrush" Color="#16A34A"/>
+        <SolidColorBrush x:Key="DangerBrush" Color="#DC2626"/>
+        <SolidColorBrush x:Key="SidebarBrush" Color="#0F172A"/>
+        <SolidColorBrush x:Key="SidebarHoverBrush" Color="#1E293B"/>
+        <SolidColorBrush x:Key="SidebarActiveBrush" Color="#2563EB"/>
+        <SolidColorBrush x:Key="MutedTextBrush" Color="#64748B"/>
+        <SolidColorBrush x:Key="CardBorderBrush" Color="#DDE3EC"/>
+
+        <Style x:Key="MenuButton" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#CBD5E1"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Height" Value="46"/>
+            <Setter Property="Margin" Value="10,2"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="14,0"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="12"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource SidebarHoverBrush}"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="ProfileMenuItemStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#334155"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Height" Value="38"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="12,0"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#F1F5F9"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="ActionButton" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Height" Value="38"/>
+            <Setter Property="MinWidth" Value="112"/>
+            <Setter Property="Padding" Value="14,7"/>
+            <Setter Property="Margin" Value="8,0,0,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="10"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource PrimaryDarkBrush}"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#CBD5E1"/>
+                    <Setter Property="Foreground" Value="#64748B"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="DangerButton" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource DangerBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Height" Value="38"/>
+            <Setter Property="MinWidth" Value="112"/>
+            <Setter Property="Padding" Value="14,7"/>
+            <Setter Property="Margin" Value="8,0,0,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                        CornerRadius="10"
+                        Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#B91C1C"/>
+                </Trigger>
+
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#CBD5E1"/>
+                    <Setter Property="Foreground" Value="#64748B"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Padding" Value="10,6"/>
+            <Setter Property="BorderBrush" Value="#CBD5E1"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="ComboBox">
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="BorderBrush" Value="#CBD5E1"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+
+        <Style TargetType="ListView">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="AlternationCount" Value="2"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+        </Style>
+
+        <Style TargetType="ListViewItem">
+            <Setter Property="MinHeight" Value="42"/>
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Style.Triggers>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="#F8FAFC"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#EEF6FF"/>
+                </Trigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#DBEAFE"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="GridViewColumnHeader">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Background" Value="#F1F5F9"/>
+            <Setter Property="Foreground" Value="#334155"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="10,0"/>
+            <Setter Property="BorderBrush" Value="#E2E8F0"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="68"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="36"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Верхняя панель -->
+        <Border Grid.Row="0" Grid.ColumnSpan="2">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#0F172A" Offset="0"/>
+                    <GradientStop Color="#1E3A8A" Offset="0.65"/>
+                    <GradientStop Color="#2563EB" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            Margin="22,0">
+
+                    <Image Source="/Resources/logo.png" Width="32" Height="32" Margin="3,3,3,3"/>
+
+                    <StackPanel>
+                        <TextBlock Text="СЗР Производство"
+                                   FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="White"/>
+                        <TextBlock Text="Модуль технолога"
+                                   FontSize="12"
+                                   Foreground="#C7D2FE"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Margin="0,0,22,0">
+                    <Border x:Name="ProfileButton"
+                            Background="#1E293B"
+                            CornerRadius="24"
+                            Padding="6"
+                            Cursor="Hand">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="40"
+                                    Height="40"
+                                    CornerRadius="20"
+                                    ClipToBounds="True"
+                                    Background="#0D9488">
+                                <Grid>
+                                    <Image x:Name="UserAvatarImage"
+                                           Stretch="UniformToFill"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           ImageFailed="Avatar_ImageFailed"/>
+
+                                    <TextBlock x:Name="UserInitials"
+                                               FontSize="14"
+                                               FontWeight="Bold"
+                                               Foreground="White"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Visibility="Collapsed"/>
+                                </Grid>
+                            </Border>
+
+                            <StackPanel Margin="10,0,10,0"
+                                        VerticalAlignment="Center">
+                                <TextBlock x:Name="UserFullNameText"
+                                           Text="Пользователь"
+                                           Foreground="White"
+                                           FontSize="12"
+                                           FontWeight="SemiBold"/>
+                                <TextBlock x:Name="UserRoleText"
+                                           Text="Роль"
+                                           Foreground="#CBD5E1"
+                                           FontSize="10"/>
+                            </StackPanel>
+
+                            <TextBlock Text="▼"
+                                       Foreground="#CBD5E1"
+                                       FontSize="10"
+                                       Margin="0,0,8,0"
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Popup профиля -->
+        <Popup x:Name="ProfilePopup"
+               PlacementTarget="{Binding ElementName=ProfileButton}"
+               Placement="Bottom"
+               StaysOpen="False"
+               Width="220">
+            <Border Background="White"
+                    CornerRadius="10"
+                    BorderBrush="#E2E8F0"
+                    BorderThickness="1"
+                    Padding="6">
+                <StackPanel>
+                    <Button x:Name="ProfileMenuItem"
+                            Content="Мой профиль"
+                            Style="{StaticResource ProfileMenuItemStyle}"/>
+                    <Button x:Name="ChangePasswordMenuItem"
+                            Content="Сменить пароль"
+                            Style="{StaticResource ProfileMenuItemStyle}"/>
+                    <Separator Margin="0,6"/>
+                    <Button x:Name="LogoutMenuItem"
+                            Content="Выход"
+                            Style="{StaticResource ProfileMenuItemStyle}"
+                            Foreground="{StaticResource DangerBrush}"/>
+                </StackPanel>
+            </Border>
+        </Popup>
+
+        <!-- Левое меню -->
+        <Border Grid.Row="1"
+                Grid.Column="0"
+                Background="{StaticResource SidebarBrush}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0"
+                            Margin="18,18,18,10">
+                    <TextBlock Text="Навигация"
+                               Foreground="#64748B"
+                               FontSize="11"
+                               FontWeight="Bold"
+                               Margin="8,0,0,8"/>
+                </StackPanel>
+
+                <ScrollViewer Grid.Row="1"
+                              VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <Button x:Name="DashboardMenu" Content="Главная" Style="{StaticResource MenuButton}"/>
+                        <Button x:Name="ProductsMenu" Content="Продукция" Style="{StaticResource MenuButton}"/>
+                        <Button x:Name="RecipesMenu" Content="Рецептуры" Style="{StaticResource MenuButton}"/>
+                        <Button x:Name="TechCardsMenu" Content="Технологические карты" Style="{StaticResource MenuButton}"/>
+                        <Button x:Name="OrdersMenu" Content="Производственные заказы" Style="{StaticResource MenuButton}"/>
+                        <Button x:Name="BatchesMenu" Content="Производственные партии" Style="{StaticResource MenuButton}"/>
+                        <Button x:Name="DeviationsMenu" Content="Отклонения и события" Style="{StaticResource MenuButton}"/>
+                        <Button x:Name="ExtruderMenu" Content="Экструдер" Style="{StaticResource MenuButton}"/>
+                        <Button x:Name="ReportsMenu" Content="Отчёты" Style="{StaticResource MenuButton}"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+
+        <!-- Основной контент -->
+        <Border Grid.Row="1"
+                Grid.Column="1"
+                Background="#EEF2F7"
+                Padding="22">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Заголовок раздела -->
+                <Grid Grid.Row="0"
+                      Margin="0,0,0,14">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel>
+                        <TextBlock x:Name="ContentTitle"
+                                   Text="Главная"
+                                   FontSize="26"
+                                   FontWeight="Bold"
+                                   Foreground="#0F172A"/>
+                        <TextBlock x:Name="ContentSubtitle"
+                                   Text="Сводка производственного модуля"
+                                   FontSize="13"
+                                   Foreground="{StaticResource MutedTextBrush}"
+                                   Margin="0,4,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center">
+                        <Button x:Name="AddButton"
+                                Content="Добавить"
+                                Style="{StaticResource ActionButton}"
+                                Click="AddButton_Click"
+                                Visibility="Collapsed"/>
+                        <Button x:Name="EditButton"
+                                Content="Редактировать"
+                                Style="{StaticResource ActionButton}"
+                                Click="EditButton_Click"
+                                Visibility="Collapsed"/>
+                        <Button x:Name="DeleteButton"
+                                Content="Удалить"
+                                Style="{StaticResource DangerButton}"
+                                Click="DeleteButton_Click"
+                                Visibility="Collapsed"/>
+                        <Button x:Name="RefreshButton"
+                                Content="Обновить"
+                                Style="{StaticResource ActionButton}"
+                                Click="RefreshButton_Click"/>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Фильтры -->
+                <Border x:Name="FilterPanel"
+                        Grid.Row="1"
+                        Background="White"
+                        CornerRadius="14"
+                        Padding="14"
+                        BorderBrush="{StaticResource CardBorderBrush}"
+                        BorderThickness="1"
+                        Margin="0,0,0,14"
+                        Visibility="Collapsed">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="240"/>
+                            <ColumnDefinition Width="12"/>
+                            <ColumnDefinition Width="190"/>
+                            <ColumnDefinition Width="12"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="12"/>
+                            <ColumnDefinition Width="90"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox x:Name="SearchBox"
+                                 Grid.Column="0"
+                                 TextChanged="SearchBox_TextChanged"
+                                 VerticalContentAlignment="Center"
+                                 ToolTip="Поиск"/>
+
+                        <ComboBox x:Name="StatusFilter"
+                                  Grid.Column="2"
+                                  SelectionChanged="StatusFilter_SelectionChanged"
+                                  DisplayMemberPath="Label"
+                                  SelectedValuePath="Value"/>
+
+                        <TextBlock Grid.Column="4"
+                                   Text="Строк:"
+                                   VerticalAlignment="Center"
+                                   Foreground="{StaticResource MutedTextBrush}"
+                                   FontSize="13"/>
+
+                        <ComboBox x:Name="PageSizeCombo"
+                                  Grid.Column="6"
+                                  SelectedIndex="1"
+                                  SelectionChanged="PageSize_SelectionChanged">
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="100"/>
+                        </ComboBox>
+                    </Grid>
+                </Border>
+
+                <!-- Контент -->
+                <Border Grid.Row="2"
+        Background="White"
+        CornerRadius="16"
+        BorderBrush="{StaticResource CardBorderBrush}"
+        BorderThickness="1"
+        Padding="0">
+                    <Grid>
+                        <ContentControl x:Name="MainContent"
+                        Margin="0"/>
+
+                        <ListView x:Name="MainListView"
+                  Margin="0"
+                  SelectionMode="Single"
+                  Visibility="Collapsed">
+                            <ListView.View>
+                                <GridView x:Name="MainGridView"/>
+                            </ListView.View>
+                        </ListView>
+                    </Grid>
+                </Border>
+
+                <!-- Пагинация -->
+                <Border x:Name="PaginationPanel"
+        Grid.Row="3"
+        Background="White"
+        CornerRadius="14"
+        Padding="10"
+        BorderBrush="{StaticResource CardBorderBrush}"
+        BorderThickness="1"
+        Margin="0,14,0,0"
+        Visibility="Collapsed">
+                    <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Center">
+
+                        <Button x:Name="FirstPageBtn"
+                Content="⏮"
+                Margin="3"
+                Width="38"
+                Height="32"
+                Click="Pagination_Click"
+                Tag="first"/>
+
+                        <Button x:Name="PrevPageBtn"
+                Content="◀"
+                Margin="3"
+                Width="38"
+                Height="32"
+                Click="Pagination_Click"
+                Tag="prev"/>
+
+                        <TextBlock x:Name="PageInfo"
+                   Text="Страница 1 из 1"
+                   VerticalAlignment="Center"
+                   Margin="12,0"
+                   FontWeight="SemiBold"
+                   Foreground="#334155"/>
+
+                        <Button x:Name="NextPageBtn"
+                Content="▶"
+                Margin="3"
+                Width="38"
+                Height="32"
+                Click="Pagination_Click"
+                Tag="next"/>
+
+                        <Button x:Name="LastPageBtn"
+                Content="⏭"
+                Margin="3"
+                Width="38"
+                Height="32"
+                Click="Pagination_Click"
+                Tag="last"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- Статус бар -->
+        <Border Grid.Row="2"
+                Grid.ColumnSpan="2"
+                Background="#E2E8F0">
+            <Grid Margin="18,0">
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center">
+                    <TextBlock Text="© 2026 Система управления производством СЗР"
+                               Foreground="#64748B"
+                               FontSize="11"/>
+                    <TextBlock Text=" | Версия 1.0"
+                               Foreground="#94A3B8"
+                               FontSize="11"
+                               Margin="10,0,0,0"/>
+                </StackPanel>
+
+                <TextBlock x:Name="StatusBarText"
+                           Text="Готов"
+                           Foreground="{StaticResource SuccessBrush}"
+                           FontSize="11"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Center"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
