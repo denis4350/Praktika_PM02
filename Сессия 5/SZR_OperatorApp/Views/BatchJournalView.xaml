@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="SZR_OperatorApp.Views.BatchJournalView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:SZR_OperatorApp.Converters">
+
+    <UserControl.Resources>
+        <converters:SeverityToColorConverter x:Key="SeverityToColorConverter"/>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <Border Grid.Row="0" Background="#2C3E50" CornerRadius="8" Padding="15" Margin="0,0,0,15">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="📜" FontSize="24" Margin="0,0,10,0"/>
+                <TextBlock Text="Журнал партии" FontSize="18" FontWeight="Bold" Foreground="White"/>
+                <TextBlock Text=" | История выполнения и события" FontSize="13" Foreground="#BDC3C7" Margin="10,0,0,0" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Панель выбора партии -->
+        <Border Grid.Row="1" Background="White" CornerRadius="8" Padding="15" Margin="0,0,0,15" BorderBrush="#E0E0E0" BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Margin="0,0,0,15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Партия:" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                    <ComboBox x:Name="BatchComboBox" Grid.Column="1" Width="250" Height="32" 
+                              DisplayMemberPath="BatchNumber" SelectedValuePath="BatchNumber"
+                              SelectionChanged="BatchComboBox_SelectionChanged"/>
+                    <Button x:Name="RefreshButton" Grid.Column="2" Content="🔄 Обновить" Width="100" Height="32"
+                            Background="#2E75B6" Foreground="White" Cursor="Hand" Margin="10,0,0,0"
+                            Click="RefreshButton_Click"/>
+                </Grid>
+
+                <!-- Информация о партии -->
+                <Border Grid.Row="1" Background="#F8F9FA" CornerRadius="6" Padding="10" Margin="0,0,0,10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="Продукт:" FontWeight="SemiBold" Margin="0,0,10,0"/>
+                        <TextBlock x:Name="ProductText" Grid.Column="1" Foreground="#666"/>
+
+                        <TextBlock Text="Линия:" FontWeight="SemiBold" Grid.Column="2" Margin="20,0,10,0"/>
+                        <TextBlock x:Name="LineText" Grid.Column="3" Foreground="#666"/>
+
+                        <TextBlock FontWeight="SemiBold" Margin="0,16,10,-11"><Run Text="Статус:"/><LineBreak/><Run/></TextBlock>
+                        <TextBlock x:Name="StatusText" Grid.Row="1" Grid.Column="1" Margin="0,5,0,0" FontWeight="Bold"/>
+
+                        <TextBlock Text="Дата начала:" FontWeight="SemiBold" Grid.Column="2" Margin="17,16,13,-11"/>
+                        <TextBlock x:Name="StartedAtText" Grid.Row="1" Grid.Column="3" Margin="0,5,0,0" Foreground="#666"/>
+                    </Grid>
+                </Border>
+
+                <!-- Журнал событий -->
+                <DataGrid x:Name="JournalGrid" Grid.Row="2" AutoGenerateColumns="False" IsReadOnly="True"
+                          HeadersVisibility="Column" AlternatingRowBackground="#F8F9FA">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Время" Binding="{Binding EventTime, StringFormat='dd.MM.yyyy HH:mm:ss'}" Width="140"/>
+                        <DataGridTextColumn Header="Шаг" Binding="{Binding StepNumber}" Width="60"/>
+                        <DataGridTextColumn Header="Событие" Binding="{Binding EventType}" Width="150"/>
+                        <DataGridTextColumn Header="Описание" Binding="{Binding Description}" Width="*"/>
+                        <DataGridTemplateColumn Header="Критичность" Width="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Severity}" 
+                                               Foreground="{Binding Severity, Converter={StaticResource SeverityToColorConverter}}"
+                                               FontWeight="Bold"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

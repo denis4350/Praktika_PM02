@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="SZR_LaboratoryApp.Tests/SZR_LaboratoryApp.Tests.csproj" Id="1ee991ce-9d8d-4bd3-a294-5b47dd1e0f7f" />
+  <Project Path="SZR_LaboratoryApp/SZR_LaboratoryApp.csproj" Id="a4aea7e0-5da1-44bc-9924-6100a7305205" />
+</Solution>
